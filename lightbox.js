@@ -30,9 +30,19 @@ export function installLightbox(root = document) {
 
     if (kind === "video") {
       const video = root.createElement("video");
-      video.src = src;
       video.controls = true;
       video.preload = "metadata";
+      const sources = [
+        [trigger.dataset.lightboxMp4, "video/mp4"],
+        [src, "video/webm"],
+      ];
+      for (const [sourceUrl, sourceType] of sources) {
+        if (!sourceUrl) continue;
+        const source = root.createElement("source");
+        source.src = sourceUrl;
+        source.type = sourceType;
+        video.append(source);
+      }
       if (trigger.dataset.lightboxPoster) video.setAttribute("poster", trigger.dataset.lightboxPoster);
       video.setAttribute("aria-label", label);
       stage.append(video);

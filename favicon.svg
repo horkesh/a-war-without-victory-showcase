@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A War Without Victory mark">
+  <rect width="64" height="64" rx="4" fill="#0b0f0d"/>
+  <rect x="5" y="5" width="54" height="54" fill="#dc7543"/>
+  <path d="M14 46 24 18h7l10 28h-7l-2-7H22l-2 7Zm10-13h6l-3-10Zm19 13-8-28h7l5 19 5-19h7l-9 28Z" fill="#0b0f0d"/>
+</svg>
