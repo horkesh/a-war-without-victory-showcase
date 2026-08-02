@@ -570,7 +570,7 @@ h1 em { color: var(--signal-bright); font-weight: 400; }
   text-align: center;
   background:
     linear-gradient(rgba(22,29,24,.93), rgba(11,15,13,.98)),
-    url("media/screenshots/05-tactical-war-map.png") center 35% / cover;
+    url("media/screenshots/rs/02_war_map.png") center 35% / cover;
 }
 .closing-conversion h2 { max-width: 920px; font-size: clamp(44px, 6.5vw, 92px); }
 .closing-conversion > div { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
@@ -657,4 +657,71 @@ footer p { margin: 0; color: #777d74; font-size: 11px; line-height: 1.65; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+}
+
+.wordmark-mark-img { display: block; flex: 0 0 auto; width: 36px; height: 36px; }
+
+.presidents-section { background: #0d120f; border-top: 1px solid rgba(220,117,67,.18); }
+.president-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.president-card { background: var(--panel); border: 1px solid var(--line); }
+.president-card > a { display: block; overflow: hidden; background: #060907; }
+.president-card img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .35s ease, filter .35s ease; }
+.president-card a:hover img { transform: scale(1.02); filter: contrast(1.06); }
+.president-card > div { padding: 22px 24px 26px; }
+.president-card span { color: var(--signal); font: 800 9px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.president-card h3 { margin: 12px 0 10px; font: 500 22px/1.15 var(--serif); }
+.president-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+.faction-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(28px, 4vw, 46px);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: clamp(28px, 4vw, 46px);
+}
+.faction-tab {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.faction-tab-label { font: 800 13px/1 var(--mono); letter-spacing: .1em; }
+.faction-tab-full { font-size: 11px; color: #7f857c; }
+.faction-tab:hover { color: var(--ink); border-color: var(--olive); }
+.faction-tab.is-active { color: var(--night); background: var(--signal); border-color: var(--signal); }
+.faction-tab.is-active .faction-tab-full { color: rgba(11,15,13,.7); }
+.faction-panel[hidden] { display: none; }
+.faction-panel .commercial-video-grid { margin-bottom: 44px; }
+
+.codex-section {
+  display: grid;
+  grid-template-columns: minmax(320px, .82fr) minmax(360px, 1.18fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 126px);
+  background: #111713;
+}
+.codex-copy > p:not(.kicker) { color: #9ca198; font-size: 14px; line-height: 1.75; margin-bottom: 26px; }
+.codex-link { display: inline-block; padding-bottom: 5px; color: #efaa80; border-bottom: 1px solid currentColor; font: 800 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.codex-link:hover { color: #ffc29c; }
+.codex-visual { position: relative; display: block; padding: 10px; background: #060907; border: 1px solid rgba(152,167,121,.35); }
+.codex-visual img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: filter .25s ease; }
+.codex-visual:hover img { filter: contrast(1.06); }
+
+@media (max-width: 1080px) {
+  .codex-section { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .president-grid { grid-template-columns: 1fr; }
+  .faction-tablist { flex-direction: column; }
 }
