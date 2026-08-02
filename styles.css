@@ -250,7 +250,8 @@ h1 em { color: var(--signal-bright); font-weight: 400; }
   inset: -14px 28px 28px -14px;
   border: 1px solid rgba(220,117,67,.26);
 }
-.hero-reel > img {
+.hero-reel > img,
+.hero-reel > video {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top;
@@ -282,21 +283,6 @@ h1 em { color: var(--signal-bright); font-weight: 400; }
   font: 800 9px/1 var(--mono);
   letter-spacing: .12em;
   text-transform: uppercase;
-}
-.hero-reel-play {
-  position: absolute;
-  left: 50%;
-  top: calc(50% - 28px);
-  width: 58px;
-  height: 58px;
-  padding-left: 4px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--night);
-  background: rgba(220,117,67,.94);
-  box-shadow: 0 12px 38px rgba(0,0,0,.5);
-  transform: translate(-50%, -50%);
 }
 
 .proof-ribbon {
