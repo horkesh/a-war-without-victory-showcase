@@ -662,6 +662,24 @@ footer p { margin: 0; color: #777d74; font-size: 11px; line-height: 1.65; }
 .president-card h3 { margin: 12px 0 10px; font: 500 22px/1.15 var(--serif); }
 .president-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 
+.war-record-section { background: #0d120f; }
+.war-record-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.war-record-card { margin: 0; background: var(--panel); border: 1px solid var(--line); }
+.war-record-card > a { display: block; overflow: hidden; background: #060907; }
+.war-record-card img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .35s ease, filter .35s ease; }
+.war-record-card a:hover img { transform: scale(1.02); filter: contrast(1.06); }
+.war-record-card figcaption { padding: 22px 24px 26px; }
+.war-record-card strong { display: block; margin-bottom: 10px; font: 500 20px/1.2 var(--serif); }
+.war-record-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+@media (max-width: 680px) {
+  .war-record-grid { grid-template-columns: 1fr; }
+}
+
 .faction-tablist {
   display: flex;
   flex-wrap: wrap;
@@ -704,8 +722,22 @@ footer p { margin: 0; color: #777d74; font-size: 11px; line-height: 1.65; }
 .codex-visual img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: filter .25s ease; }
 .codex-visual:hover img { filter: contrast(1.06); }
 
+.verdict-section {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.18fr) minmax(320px, .82fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 126px);
+  background: #0d120f;
+  border-top: 1px solid rgba(220,117,67,.18);
+}
+.verdict-copy > p:not(.kicker) { color: #9ca198; font-size: 14px; line-height: 1.75; }
+.verdict-visual { position: relative; display: block; padding: 10px; background: #060907; border: 1px solid rgba(220,117,67,.3); }
+.verdict-visual img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: filter .25s ease; }
+.verdict-visual:hover img { filter: contrast(1.06); }
+
 @media (max-width: 1080px) {
   .codex-section { grid-template-columns: 1fr; }
+  .verdict-section { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .president-grid { grid-template-columns: 1fr; }
