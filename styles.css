@@ -723,21 +723,12 @@ footer p { margin: 0; color: #777d74; font-size: 11px; line-height: 1.65; }
 .codex-visual:hover img { filter: contrast(1.06); }
 
 .verdict-section {
-  display: grid;
-  grid-template-columns: minmax(360px, 1.18fr) minmax(320px, .82fr);
-  align-items: center;
-  gap: clamp(48px, 8vw, 126px);
   background: #0d120f;
   border-top: 1px solid rgba(220,117,67,.18);
 }
-.verdict-copy > p:not(.kicker) { color: #9ca198; font-size: 14px; line-height: 1.75; }
-.verdict-visual { position: relative; display: block; padding: 10px; background: #060907; border: 1px solid rgba(220,117,67,.3); }
-.verdict-visual img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: filter .25s ease; }
-.verdict-visual:hover img { filter: contrast(1.06); }
 
 @media (max-width: 1080px) {
   .codex-section { grid-template-columns: 1fr; }
-  .verdict-section { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .president-grid { grid-template-columns: 1fr; }
