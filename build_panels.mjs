@@ -7,6 +7,9 @@ const SCREENS = [
   { key: "02_war_map", num: "02", en: ["Tactical War Map", "Front lines, formations, and the campaign casualty ledger."], bs: ["Taktička ratna karta", "Linije fronta, formacije i knjiga gubitaka kampanje."] },
   { key: "04_review_before_advance", num: "03", en: ["Review Before Advance", "What blocks the turn, and why, before you commit it."], bs: ["Pregled prije nastavka", "Šta blokira sedmicu, i zašto, prije nego što je potvrdite."] },
   { key: "05_decision_room", num: "04", en: ["Decision Room", "Pending counter-offers and command dossiers awaiting signature."], bs: ["Soba za odluke", "Protivponude i komandni dosijei koji čekaju potpis."] },
+  { key: "05a_peace_proposal", num: "", en: ["Peace Proposal", "History's peace plans arrive as live decisions — the map they draw, and the price of saying no."], bs: ["Mirovni prijedlog", "Historijski mirovni planovi stižu kao žive odluke — karta koju crtaju i cijena odbijanja."] },
+  { key: "05b_required_decision", num: "", en: ["Required Decision", "What needs the President's signature carries its consequences with it — projected civilian cost, the record it creates, the standing it spends."], bs: ["Obavezna odluka", "Ono što traži predsjednički potpis nosi svoje posljedice — projektovane civilne žrtve, zapis koji ostaje, ugled koji se troši."] },
+  { key: "05c_presidential_action", num: "", en: ["Army HQ Request", "The army asks; the President weighs the front against the reserve. Five levers, none of them free."], bs: ["Zahtjev Glavnog štaba", "Vojska traži; predsjednik važe front naspram rezerve. Pet poluga, nijedna besplatna."] },
   { key: "06_army_hq_briefing", num: "05", en: ["Army HQ Briefing", "The Chief of Staff briefing, named casualties, and corps readiness."], bs: ["Brifing Glavnog štaba", "Brifing načelnika štaba, imenovani gubici i spremnost korpusa."] },
   { key: "07_corps_command", num: "06", en: ["Corps Command", "Sectors, front density, and brigade deployment inside one corps."], bs: ["Komanda korpusa", "Sektori, gustina fronta i raspored brigada unutar jednog korpusa."] },
   { key: "07a_sector_command", num: "07", en: ["Sector Command", "Front-line brigades, morale, and enemy contact in one sector."], bs: ["Komanda sektora", "Prvolinijske brigade, moral i kontakt s neprijateljem u jednom sektoru."] },
@@ -19,9 +22,9 @@ const SCREENS = [
 ];
 
 const FACTIONS = [
-  { id: "rbih", label: "RBiH", en: { full: "Republic of Bosnia and Herzegovina", opening: "Opening & first decision", tour: "Command tour: Sarajevo" }, bs: { full: "Republika Bosna i Hercegovina", opening: "Otvaranje i prva odluka", tour: "Komandna tura: Sarajevo" } },
-  { id: "rs", label: "RS", en: { full: "Republika Srpska", opening: "Opening & first decision", tour: "Command tour: Pale" }, bs: { full: "Republika Srpska", opening: "Otvaranje i prva odluka", tour: "Komandna tura: Pale" } },
-  { id: "hrhb", label: "HRHB", en: { full: "Croatian Republic of Herzeg-Bosnia", opening: "Opening & first decision", tour: "Command tour: Grude" }, bs: { full: "Hrvatska Republika Herceg-Bosna", opening: "Otvaranje i prva odluka", tour: "Komandna tura: Grude" } },
+  { id: "rbih", label: "RBiH", en: { full: "Republic of Bosnia and Herzegovina", opening: "Opening: desk to war map", tour: "Command tour: Sarajevo" }, bs: { full: "Republika Bosna i Hercegovina", opening: "Otvaranje: od stola do karte", tour: "Komandna tura: Sarajevo" } },
+  { id: "rs", label: "RS", en: { full: "Republika Srpska", opening: "Opening: desk to war map", tour: "Command tour: Pale" }, bs: { full: "Republika Srpska", opening: "Otvaranje: od stola do karte", tour: "Komandna tura: Pale" } },
+  { id: "hrhb", label: "HRHB", en: { full: "Croatian Republic of Herzeg-Bosnia", opening: "Opening: desk to war map", tour: "Command tour: Grude" }, bs: { full: "Hrvatska Republika Herceg-Bosna", opening: "Otvaranje: od stola do karte", tour: "Komandna tura: Grude" } },
 ];
 
 // Video durations, read from the actual encoded files at build time when
@@ -45,10 +48,10 @@ function videoCard(prefix, f, kind, label, openCue, downloadLabel) {
   return `<article class="video-card"><a class="video-trigger" href="${base}.webm" data-lightbox="video" data-lightbox-mp4="${base}.mp4" data-lightbox-group="tours-${f.id}" data-lightbox-title="${esc(f.label)} — ${esc(label)}" data-lightbox-poster="${poster}" aria-label="${esc(label)}"><img src="${poster}" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">${openCue}</span></a><div class="video-info"><div class="video-meta"><span>${f.label}</span><time>${time}</time></div><h3>${esc(label)}</h3><a href="${base}.mp4" download>${downloadLabel} &#8595;</a></div></article>`;
 }
 
-function galleryCard(prefix, f, screen, lang) {
+function galleryCard(prefix, f, screen, lang, num) {
   const [title, desc] = screen[lang];
   const img = `${prefix}media/screenshots/${f.id}/${screen.key}.png`;
-  return `<figure class="gallery-card"><a href="${img}" data-lightbox="image" data-lightbox-group="screens-${f.id}" data-lightbox-title="${esc(f.label)}: ${esc(title)}"><img src="${img}" alt="${esc(f.label)}: ${esc(title)}" loading="lazy"></a><figcaption><span>${screen.num}</span><div><strong>${esc(title)}</strong><p>${esc(desc)}</p></div></figcaption></figure>`;
+  return `<figure class="gallery-card"><a href="${img}" data-lightbox="image" data-lightbox-group="screens-${f.id}" data-lightbox-title="${esc(f.label)}: ${esc(title)}"><img src="${img}" alt="${esc(f.label)}: ${esc(title)}" loading="lazy"></a><figcaption><span>${num}</span><div><strong>${esc(title)}</strong><p>${esc(desc)}</p></div></figcaption></figure>`;
 }
 
 function panels(lang, prefix) {
@@ -57,7 +60,7 @@ function panels(lang, prefix) {
   return FACTIONS.map((f, i) => {
     const meta = f[lang];
     const videos = `<div class="video-grid">${videoCard(prefix, f, "opening", meta.opening, openCue, downloadLabel)}${videoCard(prefix, f, "tour", meta.tour, openCue, downloadLabel)}</div>`;
-    const gallery = `<div class="gallery-grid">${SCREENS.map((s) => galleryCard(prefix, f, s, lang)).join("")}</div>`;
+    const gallery = `<div class="gallery-grid">${SCREENS.map((s, i) => galleryCard(prefix, f, s, lang, String(i + 1).padStart(2, "0"))).join("")}</div>`;
     return `<div class="faction-panel" id="faction-panel-${f.id}" role="tabpanel" aria-labelledby="faction-tab-${f.id}"${i === 0 ? "" : " hidden"}>${videos}${gallery}</div>`;
   }).join("\n");
 }
@@ -68,7 +71,8 @@ function inject(file, html) {
     /(<div class="faction-panels">)[\s\S]*?(<\/div>\s*<p class="capture-note")/,
     `$1\n${html}\n$2`,
   );
-  if (out === src) throw new Error(`No faction-panels block replaced in ${file}`);
+  if (!/<div class="faction-panels">/.test(src)) throw new Error(`No faction-panels block found in ${file}`);
+  if (out === src) { console.log(`unchanged ${file}`); return; }
   fs.writeFileSync(file, out, "utf8");
   console.log(`updated ${file}`);
 }
