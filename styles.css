@@ -58,7 +58,8 @@ h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: min(92vh, 900px); display: grid; align-items: end; overflow: hidden; background: #000; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(13 16 15 / 0.96) 0%, rgb(13 16 15 / 0.55) 40%, rgb(13 16 15 / 0.1) 75%); }
+/* Two shades over the loop: a floor for the text, a thin ceiling for the top bar (the game's own toolbar sits there). */
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(13 16 15 / 0.96) 0%, rgb(13 16 15 / 0.55) 40%, rgb(13 16 15 / 0.1) 75%, rgb(13 16 15 / 0.1) 88%, rgb(13 16 15 / 0.75) 100%); }
 .hero-text { position: relative; z-index: 1; padding: 0 var(--pad) clamp(3rem, 7vw, 6rem); max-width: 760px; }
 .hero h1 { font-size: clamp(2.6rem, 6.2vw, 5.2rem); margin-bottom: 1rem; }
 .hero p { font-size: clamp(1.1rem, 1.5vw, 1.3rem); max-width: 42ch; }
