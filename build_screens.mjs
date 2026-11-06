@@ -68,7 +68,7 @@ ${figs}
 </head>
 <body class="paper-page">
 <header class="top">
-  <a class="wordmark" href="${prefix}${lang === "bs" ? "bs/" : ""}">A War Without Victory</a>
+  <a class="wordmark" href="${prefix}${lang === "bs" ? "bs/" : ""}"><svg class="wordmark__mark" viewBox="0 0 100 100" aria-hidden="true"><mask id="gap"><rect width="100" height="100" fill="#fff"/><g transform="translate(50 80) rotate(0) translate(0 -45)" fill="#000" stroke="#000" stroke-width="6" stroke-linejoin="round"><path d="M-13 3.5a3.5 3.5 0 0 1 3.5-3.5h19a3.5 3.5 0 0 1 3.5 3.5v7.5h-5.5l-2.5 9h-10l-2.5-9h-5.5z"/><path d="M-3.4 20h6.8v19L0 45l-3.4-6z"/></g></mask><g fill="currentColor"><g mask="url(#gap)"><g transform="translate(50 80) rotate(-26) translate(0 -45)"><path d="M-13 3.5a3.5 3.5 0 0 1 3.5-3.5h19a3.5 3.5 0 0 1 3.5 3.5v7.5h-5.5l-2.5 9h-10l-2.5-9h-5.5z"/><path d="M-3.4 20h6.8v19L0 45l-3.4-6z"/></g><g transform="translate(50 80) rotate(26) translate(0 -45)"><path d="M-13 3.5a3.5 3.5 0 0 1 3.5-3.5h19a3.5 3.5 0 0 1 3.5 3.5v7.5h-5.5l-2.5 9h-10l-2.5-9h-5.5z"/><path d="M-3.4 20h6.8v19L0 45l-3.4-6z"/></g></g><g transform="translate(50 80) rotate(0) translate(0 -45)"><path d="M-13 3.5a3.5 3.5 0 0 1 3.5-3.5h19a3.5 3.5 0 0 1 3.5 3.5v7.5h-5.5l-2.5 9h-10l-2.5-9h-5.5z"/><path d="M-3.4 20h6.8v19L0 45l-3.4-6z"/></g></g></svg><span>A War Without Victory</span></a>
   <nav><a href="${prefix}${lang === "bs" ? "bs/" : ""}">${t.back}</a><a href="${prefix}${t.langHref}">${t.lang}</a></nav>
 </header>
 <main class="wrap">

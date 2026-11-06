@@ -50,7 +50,8 @@ h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
   padding: 1.1rem var(--pad);
 }
 .paper-page .top { position: static; background: var(--paper); color: var(--ink); border-bottom: 1px solid var(--paper-edge); }
-.wordmark { font-family: var(--cond); font-weight: 600; font-size: 1.15rem; text-decoration: none; }
+.wordmark { display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--cond); font-weight: 600; font-size: 1.15rem; text-decoration: none; }
+.wordmark__mark { width: 2rem; height: 2rem; flex: none; margin: -0.3rem 0; }
 .top nav { display: flex; gap: 1.4rem; flex-wrap: wrap; font-family: var(--cond); font-size: 1rem; }
 .top nav a { text-decoration: none; opacity: 0.85; }
 .top nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 0.2em; }
