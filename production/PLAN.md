@@ -74,3 +74,13 @@ VSCO 2 Community Edition (CC0), Versilian Studios / Sam Gossner.
 16 encodes (7 clips × EN/BS + trailer × EN/BS), H.264 only, 229 MB total; check_media PASS; pages rewired;
 pushed to main (GitHub Pages). Re-run order for a future refresh: build game → serve.mjs → generate_pitch_saves →
 record_* → assemble → plan_edit → render_all → build_screens → check_media → commit. (build_panels.mjs retired with the 2026-11 redesign: the front page has no galleries.)
+
+## Redesign 2026-11-06 (branch redesign/plain)
+
+Owner: "too many elements that are clearly AI"; redesign approved sight unseen ("all else is accepted, proceed").
+Five sections, sentence-case condensed headlines, Source Serif body, mono for data only, paper/dark bands,
+no eyebrow labels, numbering, emphasis spans, stat strip, scroll-reveal or inline galleries (48 stills on
+screens.html via build_screens.mjs; build_panels.mjs retired). Clip captions and the trailer rewritten under the
+same copy rules and re-rendered. Figures refreshed against CALIBRATION_MASTER on main (Oct 1995 checkpoint
+691/712 → "more than nineteen in twenty settlements", 31/31 anchors) and the essay index (147 → "more than a
+hundred"). Hero loop: RBiH desk from the opening take, toolbar cropped. Game-repo docs: PR #545.
