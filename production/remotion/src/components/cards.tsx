@@ -46,12 +46,12 @@ export const TitleCard: React.FC<{ lang: Lang; faction: 'RBiH' | 'RS' | 'HRHB'; 
         <div style={{ marginTop: 28 }}><Rule width={520} delay={14} /></div>
         <Rise delay={18}>
           <div style={{ fontFamily: FONT.mono, fontSize: 26, marginTop: 28, color: COLOR.dim, letterSpacing: '0.12em' }}>
-            <span style={{ color: f.tint }}>■ </span>{f[lang].toUpperCase()} · {kindLabel.toUpperCase()}
+            <span style={{ color: f.tint }}>■ </span>{f[lang].toUpperCase()}, {kindLabel.toUpperCase()}
           </div>
         </Rise>
       </div>
       <Rise delay={24} style={{ position: 'absolute', left: 140, bottom: 90 }}>
-        <div style={{ fontFamily: FONT.mono, fontSize: 20, color: COLOR.faint, letterSpacing: '0.18em' }}>{UI.captured[lang].toUpperCase()} · {UI.wip[lang].toUpperCase()}</div>
+        <div style={{ fontFamily: FONT.mono, fontSize: 20, color: COLOR.faint, letterSpacing: '0.18em' }}>{UI.captured[lang].toUpperCase()}. {UI.wip[lang].toUpperCase()}</div>
       </Rise>
     </AbsoluteFill>
   );

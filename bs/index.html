@@ -1,282 +1,148 @@
 <!DOCTYPE html>
-<html lang="bs" class="js">
+<html lang="bs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A War Without Victory | Političko-vojna strategija</title>
-  <meta name="description" content="Komandujte ratom koji se ne može dobiti: političko-vojna simulacija rata u Bosni 1992–1995, iz predsjedničke stolice. Snimci igre iz sve tri igrive frakcije.">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://horkesh.github.io/a-war-without-victory-showcase/bs/">
-  <meta property="og:site_name" content="A War Without Victory">
-  <meta property="og:title" content="A War Without Victory | Političko-vojna strategija">
-  <meta property="og:description" content="Komandujte ratom koji se ne može dobiti: političko-vojna simulacija rata u Bosni 1992–1995, iz predsjedničke stolice.">
+  <title>A War Without Victory</title>
+  <meta name="description" content="Političko-vojna simulacija rata u Bosni, od 1992. do 1995. Igrajte jedno od tri predsjedništva kroz 188 sedmičnih poteza.">
+  <meta property="og:title" content="A War Without Victory">
+  <meta property="og:description" content="Političko-vojna simulacija rata u Bosni, od 1992. do 1995. Igrajte jedno od tri predsjedništva kroz 188 sedmičnih poteza.">
   <meta property="og:image" content="https://horkesh.github.io/a-war-without-victory-showcase/og.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet" href="../styles.css">
-  <style>.hero-art { background-image: url("../media/stills/opening_splash_neutral.webp"); } .close::before { background-image: url("../media/stills/opening_monitoring_room_neutral.webp"); }</style>
 </head>
 <body>
 
-<header class="site-header">
-  <a class="brand" href="#top">A War Without Victory <span class="ref ref--quiet">1992–1995</span></a>
-  <nav class="site-nav" aria-label="Navigacija">
-    <a href="#game">Igra</a>
+<header class="top">
+  <a class="wordmark" href="#">A War Without Victory</a>
+  <nav>
     <a href="#presidents">Tri predsjednika</a>
-    <a href="#media">Snimci</a>
-    <a class="nav-cta" href="#publishers">Izdavači i mediji</a>
-    <a class="lang-switch" href="../" lang="en" hreflang="en">EN</a>
+    <a href="#verdict">Kako se završava</a>
+    <a href="screens.html">Snimci ekrana</a>
+    <a href="#press">Mediji</a>
+    <a href="../" lang="en" hreflang="en">English</a>
   </nav>
 </header>
 
-<main id="top">
+<main>
 
-  <section class="hero" aria-label="Uvod">
-    <div class="hero-art" role="img" aria-label="Pogled iz posmatračke kancelarije u sumrak: kišom išarano staklo nad bosanskom dolinom, telefon s brojčanikom i papirna karta pod stolnom lampom"></div>
-    <div class="hero-inner">
-      <p class="hero-file-line">
-        <span class="ref">Posmatrački dosije · Bosna i Hercegovina</span>
-        <span class="ref ref--quiet">Status: u aktivnom razvoju</span>
-        <span class="ref ref--quiet">PC · Za jednog igrača</span>
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="../media/videos/hero_loop_poster.jpg" aria-hidden="true">
+      <source src="../media/videos/hero_loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h1>Komandujte ratom koji se ne može dobiti.</h1>
+      <p>Političko-vojna simulacija rata u Bosni, od 1992. do 1995. Igrajte jedno od tri predsjedništva kroz 188 sedmičnih poteza.</p>
+      <p class="actions">
+        <a class="button" href="../media/videos/bs/trailer.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/trailer.mp4" data-lightbox-poster="../media/videos/bs/trailer_poster.png" data-lightbox-title="A War Without Victory, trejler">Pogledajte trejler <span class="dur">1:25</span></a>
+        <a class="button button-quiet" href="#press">Mediji i izdavači</a>
       </p>
-      <h1 class="display">Komandujte ratom <em>koji se ne može dobiti.</em></h1>
-      <p class="lede">Političko-vojna simulacija rata u Bosni, od aprila 1992. do Daytona. Vodite RBiH, RS ili HRHB kroz 188 historijskih sedmica — ne da biste pobijedili u ratu u kojem svi gube, nego da ga završite s više svojih ljudi, teritorije i institucija nego što je to historiji pošlo za rukom.</p>
-      <div class="hero-actions">
-        <a class="btn btn--lamp" href="../media/videos/bs/trailer.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/trailer.mp4" data-lightbox-title="Rat bez pobjede — trejler" data-lightbox-poster="../media/videos/bs/trailer_poster.png"><span class="glyph">&#9654;</span> Pogledajte trejler</a>
-        <a class="btn" href="#publishers">Brif za izdavače</a>
-      </div>
-      <p class="hero-note">Svi snimci i slike su iz trenutne igrive verzije · bez maketa · snimci su montirani radi tempa, s titlovima i originalnom muzikom igre</p>
+      <p class="small">Snimci iz trenutne verzije igre, 0.9.9 beta. U razvoju za PC.</p>
     </div>
   </section>
 
-  <dl class="fact-strip" aria-label="Osnovni podaci">
-    <div class="fact"><dt>Potez</dt><dd>1 historijska sedmica</dd></div>
-    <div class="fact"><dt>Kampanja</dt><dd>April 1992. → Dayton, 188 sedmica</dd></div>
-    <div class="fact"><dt>Igrivo</dt><dd>3 predsjedništva</dd></div>
-    <div class="fact"><dt>Rezolucija</dt><dd>Deterministička simulacija</dd></div>
-    <div class="fact"><dt>Mjerilo</dt><dd>Ocjenjuje se prema historijskoj karti</dd></div>
-  </dl>
-
-  <section class="section reveal" id="game" aria-labelledby="game-title">
-    <div class="section-head">
-      <h2 id="game-title" class="display">Šta vaš potpis čini</h2>
-      <span class="ref ref--quiet">Odjeljak 01 · Predsjednička vlast</span>
-    </div>
-    <p class="section-lede">Vi ste ratni predsjednik, a ne svevideći general. Svaka poluga ispod je stvarna komanda u igri — plaćena komandnim autoritetom, filtrirana kroz komandante i upisana u trajni zapis.</p>
-    <div class="pair" style="margin-bottom: clamp(2rem, 4vw, 3rem);">
-      <figure>
-        <a class="video-trigger" href="../media/videos/bs/rbih_directive.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_directive.mp4" data-lightbox-title="Jedna naredba, od početka do kraja" data-lightbox-poster="../media/videos/bs/rbih_directive_poster.png" aria-label="Jedna naredba, od početka do kraja">
-          <img src="../media/videos/bs/rbih_directive_poster.png" alt="" loading="lazy">
-          <span class="play-chip" aria-hidden="true">&#9654;</span>
-          <span class="video-open-cue">Otvori snimak</span>
+  <section class="band paper" id="desk">
+    <div class="wrap two">
+      <figure class="clip">
+        <a href="../media/videos/bs/rbih_directive.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_directive.mp4" data-lightbox-poster="../media/videos/bs/rbih_directive_poster.png" data-lightbox-title="Jedna naredba, od početka do kraja">
+          <img src="../media/videos/bs/rbih_directive_poster.png" alt="Soba za odluke u desktop verziji igre, sa zahtjevom za rezervu otvorenim za potpis">
+          <span class="play">Pusti</span>
         </a>
-        <figcaption>Jedna naredba, od početka do kraja · 00:35 · <a href="../media/videos/bs/rbih_directive.mp4" download>Preuzmi MP4 snimak &#8595;</a></figcaption>
+        <figcaption>Jedna naredba, od početka do kraja. Snimljeno u desktop verziji, juli 1993. 0:35</figcaption>
       </figure>
-      <div>
-        <h3 class="display">2. korpus traži Crne labudove.</h3>
-        <p>Snimljeno u desktop verziji, juli 1993.: 2. korpus traži 120. oslobodilačku brigadu iz rezerve Generalštaba u Kalesiji da učvrsti svoj najtanji front. Predsjednik otvara Sobu za odluke, čita dosije — šta linija dobija, i šta Kalesija gubi kao oslonac — i potpisuje direktivu za 25 autoriteta.</p>
-        <p>Autoritet se troši odmah; naredba se izvršava kad sedmica krene. Tako izgleda svaka poluga u igri.</p>
-      </div>
-    </div>
-    <div class="gallery-grid">
-      <figure class="gallery-card"><a href="../media/screenshots/verbs/command_surface.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Komandna površina"><img src="../media/screenshots/verbs/command_surface.png" alt="Komandna površina" loading="lazy"></a><figcaption><span>I</span><div><strong>Komandna površina</strong><p>Gdje ćete usmjeriti rat? Šest komandnih karata — ratno usmjerenje, diplomatija, kadrovi — i jedna koja se zove Savjest i zločin.</p></div></figcaption></figure>
-      <figure class="gallery-card"><a href="../media/screenshots/verbs/decorate_decision.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Odlikujte brigadu"><img src="../media/screenshots/verbs/decorate_decision.png" alt="Odlikujte brigadu" loading="lazy"></a><figcaption><span>II</span><div><strong>Odlikujte brigadu</strong><p>Odlikovanje diže moral i kredibilitet — a formacije koje su preskočene to pamte.</p></div></figcaption></figure>
-      <figure class="gallery-card"><a href="../media/screenshots/verbs/front_visit_card.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Posjetite front"><img src="../media/screenshots/verbs/front_visit_card.png" alt="Posjetite front" loading="lazy"></a><figcaption><span>III</span><div><strong>Posjetite front</strong><p>Predsjednička posjeta diže moral na liniji — po cijenu pritiska patrona. Do odsječene enklave se ne može doći.</p></div></figcaption></figure>
-      <figure class="gallery-card"><a href="../media/screenshots/verbs/address_nation_card.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Obratite se naciji"><img src="../media/screenshots/verbs/address_nation_card.png" alt="Obratite se naciji" loading="lazy"></a><figcaption><span>IV</span><div><strong>Obratite se naciji</strong><p>Dvosjekli mač: prkos učvršćuje linije, apel svijetu iritira patrona, a podignuta očekivanja se kasnije izjalove.</p></div></figcaption></figure>
-      <figure class="gallery-card"><a href="../media/screenshots/rbih/05c_presidential_action.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Oslobodite rezervu"><img src="../media/screenshots/rbih/05c_presidential_action.png" alt="Oslobodite rezervu" loading="lazy"></a><figcaption><span>V</span><div><strong>Oslobodite rezervu</strong><p>Gardijska brigada može spasiti pravac napada — a Visoko ostaje bez svog strateškog oslonca.</p></div></figcaption></figure>
-      <figure class="gallery-card"><a href="../media/screenshots/rs/05b_required_decision.png" data-lightbox="image" data-lightbox-group="verbs" data-lightbox-title="Držite svijetlu liniju"><img src="../media/screenshots/rs/05b_required_decision.png" alt="Držite svijetlu liniju" loading="lazy"></a><figcaption><span>VI</span><div><strong>Držite svijetlu liniju</strong><p>Paramilitarni zahtjevi stižu s projekcijom civilnih žrtava i zapisom o ratnim zločinima. Odbijte ih, odobrite — ili jednom zauvijek postavite politiku.</p></div></figcaption></figure>
-    </div>
-  </section>
-
-  <section class="section reveal" id="presidents" aria-labelledby="presidents-title">
-    <div class="section-head">
-      <h2 id="presidents-title" class="display">Rat izgleda drugačije sa svakog stola</h2>
-      <span class="ref ref--quiet">Odjeljak 02 · Asimetrija frakcija</span>
-    </div>
-    <p class="section-lede">Komanda svugdje ide kroz istih pet predsjedničkih poluga — odobriti, zatražiti ili zaustaviti operaciju, osloboditi elitnu rezervu, smijeniti komandanta. <strong>Ali svaki potpis ne košta isto.</strong></p>
-    <div class="presidents">
-      <article class="president-card">
-        <a href="../media/screenshots/rbih/01_desk.png" data-lightbox="image" data-lightbox-group="presidents" data-lightbox-title="Republika Bosna i Hercegovina — Predsjednički sto">
-          <img src="../media/screenshots/rbih/01_desk.png" alt="Predsjednički sto, Republika Bosna i Hercegovina" loading="lazy">
-        </a>
-        <div class="president-body">
-          <span class="ref">RBiH · ARBiH</span>
-          <h3>Republika Bosna i Hercegovina</h3>
-          <p>Vlada iz rekviriranog sarajevskog stana pod opsadom. Najčvršća formalna kontrola od tri institucije — i najmanje izgovora ako zakaže.</p>
-        </div>
-      </article>
-      <article class="president-card">
-        <a href="../media/screenshots/rs/01_desk.png" data-lightbox="image" data-lightbox-group="presidents" data-lightbox-title="Republika Srpska — Predsjednički sto">
-          <img src="../media/screenshots/rs/01_desk.png" alt="Predsjednički sto, Republika Srpska" loading="lazy">
-        </a>
-        <div class="president-body">
-          <span class="ref">RS · VRS</span>
-          <h3>Republika Srpska</h3>
-          <p>Nasljeđuje oficire JNA, opremu i komandno mjesto na Palama. Najjača vojska na papiru — i Narodna skupština koja može odbiti potpis.</p>
-        </div>
-      </article>
-      <article class="president-card">
-        <a href="../media/screenshots/hrhb/01_desk.png" data-lightbox="image" data-lightbox-group="presidents" data-lightbox-title="Hrvatska Republika Herceg-Bosna — Predsjednički sto">
-          <img src="../media/screenshots/hrhb/01_desk.png" alt="Predsjednički sto, Hrvatska Republika Herceg-Bosna" loading="lazy">
-        </a>
-        <div class="president-body">
-          <span class="ref">HRHB · HVO</span>
-          <h3>Hrvatska Republika Herceg-Bosna</h3>
-          <p>Iz hercegovačke kamene kuće odgovara dvjema prijestolnicama: u savezu sa Sarajevom, finansirana iz Zagreba. Svaka naredba ide kroz zagrebačko patronstvo — i njegovu cijenu.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section reveal" id="media" aria-labelledby="media-title">
-    <div class="section-head">
-      <h2 id="media-title" class="display">Izaberite frakciju. Vidite njen rat.</h2>
-      <span class="ref ref--quiet">Odjeljak 03 · Snimljeno iz igre</span>
-    </div>
-    <p class="section-lede">Svaki ekran ispod postoji za sve tri igrive frakcije, snimljen u istoj sedmici kampanje u vlastitom snimku svake frakcije. Otvorite bilo koji kadar u pregledniku; reprodukcija počinje pauzirana, s kontrolama.</p>
-
-    <div class="faction-tablist" role="tablist" aria-label="Izbor frakcije">
-      <button type="button" class="faction-tab is-active" id="faction-tab-rbih" data-faction-tab="rbih" role="tab" aria-selected="true" aria-controls="faction-panel-rbih"><span class="faction-tab-label">RBiH</span><span class="faction-tab-full">Republika Bosna i Hercegovina</span></button>
-      <button type="button" class="faction-tab" id="faction-tab-rs" data-faction-tab="rs" role="tab" aria-selected="false" aria-controls="faction-panel-rs"><span class="faction-tab-label">RS</span><span class="faction-tab-full">Republika Srpska</span></button>
-      <button type="button" class="faction-tab" id="faction-tab-hrhb" data-faction-tab="hrhb" role="tab" aria-selected="false" aria-controls="faction-panel-hrhb"><span class="faction-tab-label">HRHB</span><span class="faction-tab-full">Hrvatska Republika Herceg-Bosna</span></button>
-    </div>
-
-    <div class="faction-panels">
-<div class="faction-panel" id="faction-panel-rbih" role="tabpanel" aria-labelledby="faction-tab-rbih"><div class="video-grid"><article class="video-card"><a class="video-trigger" href="../media/videos/bs/rbih_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_opening.mp4" data-lightbox-group="tours-rbih" data-lightbox-title="RBiH — Otvaranje: od stola do karte" data-lightbox-poster="../media/videos/bs/rbih_opening_poster.png" aria-label="Otvaranje: od stola do karte"><img src="../media/videos/bs/rbih_opening_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>RBiH</span><time>00:29</time></div><h3>Otvaranje: od stola do karte</h3><a href="../media/videos/bs/rbih_opening.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article><article class="video-card"><a class="video-trigger" href="../media/videos/bs/rbih_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_tour.mp4" data-lightbox-group="tours-rbih" data-lightbox-title="RBiH — Komandna tura: Sarajevo" data-lightbox-poster="../media/videos/bs/rbih_tour_poster.png" aria-label="Komandna tura: Sarajevo"><img src="../media/videos/bs/rbih_tour_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>RBiH</span><time>00:48</time></div><h3>Komandna tura: Sarajevo</h3><a href="../media/videos/bs/rbih_tour.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article></div><div class="gallery-grid"><figure class="gallery-card"><a href="../media/screenshots/rbih/01_desk.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Predsjednički sto"><img src="../media/screenshots/rbih/01_desk.png" alt="RBiH: Predsjednički sto" loading="lazy"></a><figcaption><span>01</span><div><strong>Predsjednički sto</strong><p>Komandna površina, mjera autoriteta i predsjednička pošta.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/02_war_map.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Taktička ratna karta"><img src="../media/screenshots/rbih/02_war_map.png" alt="RBiH: Taktička ratna karta" loading="lazy"></a><figcaption><span>02</span><div><strong>Taktička ratna karta</strong><p>Linije fronta, formacije i knjiga gubitaka kampanje.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/04_review_before_advance.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Pregled prije nastavka"><img src="../media/screenshots/rbih/04_review_before_advance.png" alt="RBiH: Pregled prije nastavka" loading="lazy"></a><figcaption><span>03</span><div><strong>Pregled prije nastavka</strong><p>Šta blokira sedmicu, i zašto, prije nego što je potvrdite.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/05_decision_room.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Soba za odluke"><img src="../media/screenshots/rbih/05_decision_room.png" alt="RBiH: Soba za odluke" loading="lazy"></a><figcaption><span>04</span><div><strong>Soba za odluke</strong><p>Protivponude i komandni dosijei koji čekaju potpis.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/05a_peace_proposal.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Mirovni prijedlog"><img src="../media/screenshots/rbih/05a_peace_proposal.png" alt="RBiH: Mirovni prijedlog" loading="lazy"></a><figcaption><span>05</span><div><strong>Mirovni prijedlog</strong><p>Historijski mirovni planovi stižu kao žive odluke — karta koju crtaju i cijena odbijanja.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/05b_required_decision.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Obavezna odluka"><img src="../media/screenshots/rbih/05b_required_decision.png" alt="RBiH: Obavezna odluka" loading="lazy"></a><figcaption><span>06</span><div><strong>Obavezna odluka</strong><p>Ono što traži predsjednički potpis nosi svoje posljedice — projektovane civilne žrtve, zapis koji ostaje, ugled koji se troši.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/05c_presidential_action.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Zahtjev Glavnog štaba"><img src="../media/screenshots/rbih/05c_presidential_action.png" alt="RBiH: Zahtjev Glavnog štaba" loading="lazy"></a><figcaption><span>07</span><div><strong>Zahtjev Glavnog štaba</strong><p>Vojska traži; predsjednik važe front naspram rezerve. Pet poluga, nijedna besplatna.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/06_army_hq_briefing.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Brifing Glavnog štaba"><img src="../media/screenshots/rbih/06_army_hq_briefing.png" alt="RBiH: Brifing Glavnog štaba" loading="lazy"></a><figcaption><span>08</span><div><strong>Brifing Glavnog štaba</strong><p>Brifing načelnika štaba, imenovani gubici i spremnost korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/07_corps_command.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Komanda korpusa"><img src="../media/screenshots/rbih/07_corps_command.png" alt="RBiH: Komanda korpusa" loading="lazy"></a><figcaption><span>09</span><div><strong>Komanda korpusa</strong><p>Sektori, gustina fronta i raspored brigada unutar jednog korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/07a_sector_command.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Komanda sektora"><img src="../media/screenshots/rbih/07a_sector_command.png" alt="RBiH: Komanda sektora" loading="lazy"></a><figcaption><span>10</span><div><strong>Komanda sektora</strong><p>Prvolinijske brigade, moral i kontakt s neprijateljem u jednom sektoru.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/07a2_formation_detail.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Detalj formacije"><img src="../media/screenshots/rbih/07a2_formation_detail.png" alt="RBiH: Detalj formacije" loading="lazy"></a><figcaption><span>11</span><div><strong>Detalj formacije</strong><p>Brojno stanje, oprema i ukopanost jedne brigade.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/07b_war_summary.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Ratni pregled"><img src="../media/screenshots/rbih/07b_war_summary.png" alt="RBiH: Ratni pregled" loading="lazy"></a><figcaption><span>12</span><div><strong>Ratni pregled</strong><p>Spremnost i stanje oružanih snaga na jedan pogled.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/07c_personnel.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Kadrovi"><img src="../media/screenshots/rbih/07c_personnel.png" alt="RBiH: Kadrovi" loading="lazy"></a><figcaption><span>13</span><div><strong>Kadrovi</strong><p>Imenovani oficiri, postavljenja i promjene u komandi.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/08_records.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Arhiva"><img src="../media/screenshots/rbih/08_records.png" alt="RBiH: Arhiva" loading="lazy"></a><figcaption><span>14</span><div><strong>Arhiva</strong><p>Arhiv operacija i teritorija kroz cijelu kampanju.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/09_chronicle.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Hronika"><img src="../media/screenshots/rbih/09_chronicle.png" alt="RBiH: Hronika" loading="lazy"></a><figcaption><span>15</span><div><strong>Hronika</strong><p>Priča kampanje kako se razvija, iz sedmice u sedmicu.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rbih/10_codex.png" data-lightbox="image" data-lightbox-group="screens-rbih" data-lightbox-title="RBiH: Kodeks"><img src="../media/screenshots/rbih/10_codex.png" alt="RBiH: Kodeks" loading="lazy"></a><figcaption><span>16</span><div><strong>Kodeks</strong><p>Historijski eseji i zapis o tome koliko se ovaj rat udaljio od stvarnog.</p></div></figcaption></figure></div></div>
-<div class="faction-panel" id="faction-panel-rs" role="tabpanel" aria-labelledby="faction-tab-rs" hidden><div class="video-grid"><article class="video-card"><a class="video-trigger" href="../media/videos/bs/rs_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rs_opening.mp4" data-lightbox-group="tours-rs" data-lightbox-title="RS — Otvaranje: od stola do karte" data-lightbox-poster="../media/videos/bs/rs_opening_poster.png" aria-label="Otvaranje: od stola do karte"><img src="../media/videos/bs/rs_opening_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>RS</span><time>00:29</time></div><h3>Otvaranje: od stola do karte</h3><a href="../media/videos/bs/rs_opening.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article><article class="video-card"><a class="video-trigger" href="../media/videos/bs/rs_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rs_tour.mp4" data-lightbox-group="tours-rs" data-lightbox-title="RS — Komandna tura: Pale" data-lightbox-poster="../media/videos/bs/rs_tour_poster.png" aria-label="Komandna tura: Pale"><img src="../media/videos/bs/rs_tour_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>RS</span><time>00:48</time></div><h3>Komandna tura: Pale</h3><a href="../media/videos/bs/rs_tour.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article></div><div class="gallery-grid"><figure class="gallery-card"><a href="../media/screenshots/rs/01_desk.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Predsjednički sto"><img src="../media/screenshots/rs/01_desk.png" alt="RS: Predsjednički sto" loading="lazy"></a><figcaption><span>01</span><div><strong>Predsjednički sto</strong><p>Komandna površina, mjera autoriteta i predsjednička pošta.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/02_war_map.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Taktička ratna karta"><img src="../media/screenshots/rs/02_war_map.png" alt="RS: Taktička ratna karta" loading="lazy"></a><figcaption><span>02</span><div><strong>Taktička ratna karta</strong><p>Linije fronta, formacije i knjiga gubitaka kampanje.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/04_review_before_advance.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Pregled prije nastavka"><img src="../media/screenshots/rs/04_review_before_advance.png" alt="RS: Pregled prije nastavka" loading="lazy"></a><figcaption><span>03</span><div><strong>Pregled prije nastavka</strong><p>Šta blokira sedmicu, i zašto, prije nego što je potvrdite.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/05_decision_room.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Soba za odluke"><img src="../media/screenshots/rs/05_decision_room.png" alt="RS: Soba za odluke" loading="lazy"></a><figcaption><span>04</span><div><strong>Soba za odluke</strong><p>Protivponude i komandni dosijei koji čekaju potpis.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/05a_peace_proposal.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Mirovni prijedlog"><img src="../media/screenshots/rs/05a_peace_proposal.png" alt="RS: Mirovni prijedlog" loading="lazy"></a><figcaption><span>05</span><div><strong>Mirovni prijedlog</strong><p>Historijski mirovni planovi stižu kao žive odluke — karta koju crtaju i cijena odbijanja.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/05b_required_decision.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Obavezna odluka"><img src="../media/screenshots/rs/05b_required_decision.png" alt="RS: Obavezna odluka" loading="lazy"></a><figcaption><span>06</span><div><strong>Obavezna odluka</strong><p>Ono što traži predsjednički potpis nosi svoje posljedice — projektovane civilne žrtve, zapis koji ostaje, ugled koji se troši.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/05c_presidential_action.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Zahtjev Glavnog štaba"><img src="../media/screenshots/rs/05c_presidential_action.png" alt="RS: Zahtjev Glavnog štaba" loading="lazy"></a><figcaption><span>07</span><div><strong>Zahtjev Glavnog štaba</strong><p>Vojska traži; predsjednik važe front naspram rezerve. Pet poluga, nijedna besplatna.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/06_army_hq_briefing.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Brifing Glavnog štaba"><img src="../media/screenshots/rs/06_army_hq_briefing.png" alt="RS: Brifing Glavnog štaba" loading="lazy"></a><figcaption><span>08</span><div><strong>Brifing Glavnog štaba</strong><p>Brifing načelnika štaba, imenovani gubici i spremnost korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/07_corps_command.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Komanda korpusa"><img src="../media/screenshots/rs/07_corps_command.png" alt="RS: Komanda korpusa" loading="lazy"></a><figcaption><span>09</span><div><strong>Komanda korpusa</strong><p>Sektori, gustina fronta i raspored brigada unutar jednog korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/07a_sector_command.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Komanda sektora"><img src="../media/screenshots/rs/07a_sector_command.png" alt="RS: Komanda sektora" loading="lazy"></a><figcaption><span>10</span><div><strong>Komanda sektora</strong><p>Prvolinijske brigade, moral i kontakt s neprijateljem u jednom sektoru.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/07a2_formation_detail.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Detalj formacije"><img src="../media/screenshots/rs/07a2_formation_detail.png" alt="RS: Detalj formacije" loading="lazy"></a><figcaption><span>11</span><div><strong>Detalj formacije</strong><p>Brojno stanje, oprema i ukopanost jedne brigade.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/07b_war_summary.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Ratni pregled"><img src="../media/screenshots/rs/07b_war_summary.png" alt="RS: Ratni pregled" loading="lazy"></a><figcaption><span>12</span><div><strong>Ratni pregled</strong><p>Spremnost i stanje oružanih snaga na jedan pogled.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/07c_personnel.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Kadrovi"><img src="../media/screenshots/rs/07c_personnel.png" alt="RS: Kadrovi" loading="lazy"></a><figcaption><span>13</span><div><strong>Kadrovi</strong><p>Imenovani oficiri, postavljenja i promjene u komandi.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/08_records.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Arhiva"><img src="../media/screenshots/rs/08_records.png" alt="RS: Arhiva" loading="lazy"></a><figcaption><span>14</span><div><strong>Arhiva</strong><p>Arhiv operacija i teritorija kroz cijelu kampanju.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/09_chronicle.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Hronika"><img src="../media/screenshots/rs/09_chronicle.png" alt="RS: Hronika" loading="lazy"></a><figcaption><span>15</span><div><strong>Hronika</strong><p>Priča kampanje kako se razvija, iz sedmice u sedmicu.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/rs/10_codex.png" data-lightbox="image" data-lightbox-group="screens-rs" data-lightbox-title="RS: Kodeks"><img src="../media/screenshots/rs/10_codex.png" alt="RS: Kodeks" loading="lazy"></a><figcaption><span>16</span><div><strong>Kodeks</strong><p>Historijski eseji i zapis o tome koliko se ovaj rat udaljio od stvarnog.</p></div></figcaption></figure></div></div>
-<div class="faction-panel" id="faction-panel-hrhb" role="tabpanel" aria-labelledby="faction-tab-hrhb" hidden><div class="video-grid"><article class="video-card"><a class="video-trigger" href="../media/videos/bs/hrhb_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/hrhb_opening.mp4" data-lightbox-group="tours-hrhb" data-lightbox-title="HRHB — Otvaranje: od stola do karte" data-lightbox-poster="../media/videos/bs/hrhb_opening_poster.png" aria-label="Otvaranje: od stola do karte"><img src="../media/videos/bs/hrhb_opening_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>HRHB</span><time>00:29</time></div><h3>Otvaranje: od stola do karte</h3><a href="../media/videos/bs/hrhb_opening.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article><article class="video-card"><a class="video-trigger" href="../media/videos/bs/hrhb_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/hrhb_tour.mp4" data-lightbox-group="tours-hrhb" data-lightbox-title="HRHB — Komandna tura: Grude" data-lightbox-poster="../media/videos/bs/hrhb_tour_poster.png" aria-label="Komandna tura: Grude"><img src="../media/videos/bs/hrhb_tour_poster.png" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">Otvori snimak</span></a><div class="video-info"><div class="video-meta"><span>HRHB</span><time>00:48</time></div><h3>Komandna tura: Grude</h3><a href="../media/videos/bs/hrhb_tour.mp4" download>Preuzmi MP4 snimak &#8595;</a></div></article></div><div class="gallery-grid"><figure class="gallery-card"><a href="../media/screenshots/hrhb/01_desk.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Predsjednički sto"><img src="../media/screenshots/hrhb/01_desk.png" alt="HRHB: Predsjednički sto" loading="lazy"></a><figcaption><span>01</span><div><strong>Predsjednički sto</strong><p>Komandna površina, mjera autoriteta i predsjednička pošta.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/02_war_map.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Taktička ratna karta"><img src="../media/screenshots/hrhb/02_war_map.png" alt="HRHB: Taktička ratna karta" loading="lazy"></a><figcaption><span>02</span><div><strong>Taktička ratna karta</strong><p>Linije fronta, formacije i knjiga gubitaka kampanje.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/04_review_before_advance.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Pregled prije nastavka"><img src="../media/screenshots/hrhb/04_review_before_advance.png" alt="HRHB: Pregled prije nastavka" loading="lazy"></a><figcaption><span>03</span><div><strong>Pregled prije nastavka</strong><p>Šta blokira sedmicu, i zašto, prije nego što je potvrdite.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/05_decision_room.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Soba za odluke"><img src="../media/screenshots/hrhb/05_decision_room.png" alt="HRHB: Soba za odluke" loading="lazy"></a><figcaption><span>04</span><div><strong>Soba za odluke</strong><p>Protivponude i komandni dosijei koji čekaju potpis.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/05a_peace_proposal.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Mirovni prijedlog"><img src="../media/screenshots/hrhb/05a_peace_proposal.png" alt="HRHB: Mirovni prijedlog" loading="lazy"></a><figcaption><span>05</span><div><strong>Mirovni prijedlog</strong><p>Historijski mirovni planovi stižu kao žive odluke — karta koju crtaju i cijena odbijanja.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/05b_required_decision.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Obavezna odluka"><img src="../media/screenshots/hrhb/05b_required_decision.png" alt="HRHB: Obavezna odluka" loading="lazy"></a><figcaption><span>06</span><div><strong>Obavezna odluka</strong><p>Ono što traži predsjednički potpis nosi svoje posljedice — projektovane civilne žrtve, zapis koji ostaje, ugled koji se troši.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/05c_presidential_action.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Zahtjev Glavnog štaba"><img src="../media/screenshots/hrhb/05c_presidential_action.png" alt="HRHB: Zahtjev Glavnog štaba" loading="lazy"></a><figcaption><span>07</span><div><strong>Zahtjev Glavnog štaba</strong><p>Vojska traži; predsjednik važe front naspram rezerve. Pet poluga, nijedna besplatna.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/06_army_hq_briefing.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Brifing Glavnog štaba"><img src="../media/screenshots/hrhb/06_army_hq_briefing.png" alt="HRHB: Brifing Glavnog štaba" loading="lazy"></a><figcaption><span>08</span><div><strong>Brifing Glavnog štaba</strong><p>Brifing načelnika štaba, imenovani gubici i spremnost korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/07_corps_command.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Komanda korpusa"><img src="../media/screenshots/hrhb/07_corps_command.png" alt="HRHB: Komanda korpusa" loading="lazy"></a><figcaption><span>09</span><div><strong>Komanda korpusa</strong><p>Sektori, gustina fronta i raspored brigada unutar jednog korpusa.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/07a_sector_command.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Komanda sektora"><img src="../media/screenshots/hrhb/07a_sector_command.png" alt="HRHB: Komanda sektora" loading="lazy"></a><figcaption><span>10</span><div><strong>Komanda sektora</strong><p>Prvolinijske brigade, moral i kontakt s neprijateljem u jednom sektoru.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/07a2_formation_detail.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Detalj formacije"><img src="../media/screenshots/hrhb/07a2_formation_detail.png" alt="HRHB: Detalj formacije" loading="lazy"></a><figcaption><span>11</span><div><strong>Detalj formacije</strong><p>Brojno stanje, oprema i ukopanost jedne brigade.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/07b_war_summary.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Ratni pregled"><img src="../media/screenshots/hrhb/07b_war_summary.png" alt="HRHB: Ratni pregled" loading="lazy"></a><figcaption><span>12</span><div><strong>Ratni pregled</strong><p>Spremnost i stanje oružanih snaga na jedan pogled.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/07c_personnel.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Kadrovi"><img src="../media/screenshots/hrhb/07c_personnel.png" alt="HRHB: Kadrovi" loading="lazy"></a><figcaption><span>13</span><div><strong>Kadrovi</strong><p>Imenovani oficiri, postavljenja i promjene u komandi.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/08_records.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Arhiva"><img src="../media/screenshots/hrhb/08_records.png" alt="HRHB: Arhiva" loading="lazy"></a><figcaption><span>14</span><div><strong>Arhiva</strong><p>Arhiv operacija i teritorija kroz cijelu kampanju.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/09_chronicle.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Hronika"><img src="../media/screenshots/hrhb/09_chronicle.png" alt="HRHB: Hronika" loading="lazy"></a><figcaption><span>15</span><div><strong>Hronika</strong><p>Priča kampanje kako se razvija, iz sedmice u sedmicu.</p></div></figcaption></figure><figure class="gallery-card"><a href="../media/screenshots/hrhb/10_codex.png" data-lightbox="image" data-lightbox-group="screens-hrhb" data-lightbox-title="HRHB: Kodeks"><img src="../media/screenshots/hrhb/10_codex.png" alt="HRHB: Kodeks" loading="lazy"></a><figcaption><span>16</span><div><strong>Kodeks</strong><p>Historijski eseji i zapis o tome koliko se ovaj rat udaljio od stvarnog.</p></div></figcaption></figure></div></div>
-</div>
-    <p class="capture-note">Snimljeno iz trenutne igrive verzije · isti plan snimanja za sve tri frakcije · muzika: originalna partitura igre, „What Remains of Home“ i kampanjska svita (snimljeni uzorci: VSCO 2 Community Edition, CC0)</p>
-  </section>
-
-  <section class="section reveal" id="codex" aria-labelledby="codex-title">
-    <div class="section-head">
-      <h2 id="codex-title" class="display">Historija je referenca, a ne šine</h2>
-      <span class="ref ref--quiet">Odjeljak 04 · Vjernost</span>
-    </div>
-    <div class="pair">
-      <figure>
-        <a href="../media/screenshots/rbih/10_codex.png" data-lightbox="image" data-lightbox-title="Kodeks — eseji s izvorima i praćenje odstupanja od historije">
-          <img src="../media/screenshots/rbih/10_codex.png" alt="Kodeks: historijski eseji s izvorima i praćenje odstupanja" loading="lazy">
-        </a>
-        <figcaption>Prilog · Kodeks, snimljen iz igre</figcaption>
-      </figure>
-      <div>
-        <h3 class="display">Cijeli rat je odigran, od početka do Daytona — sa sve tri frakcije</h3>
-        <p>Kada se pusti da teče historijskom linijom, simulacija se svake sedmice ocjenjuje prema kartiranom zapisu stvarnog rata: otprilike devet od deset naselja završi kampanju pod svojim historijskim kontrolorom, a 31 od 31 imenovanog grada-uporišta padne — ili se održi — kako se stvarno dogodilo.</p>
-        <p>Ništa vas ne tjera da to ponovite. Svaka odluka se provjerava prema zapisu čim je donesete, a Kodeks u igri — dublje u kampanji i preko stotinu eseja s izvorima — prati koliko se vaš rat udaljio od onoga koji se dogodio.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="verdict" aria-labelledby="verdict-title">
-    <div class="section-head">
-      <h2 id="verdict-title" class="display">Svaka kampanja završava polaganjem računa</h2>
-      <span class="ref ref--quiet">Odjeljak 05 · Presuda</span>
-    </div>
-    <p class="section-lede">Kakav god ishod bio, ocjenjuje se prema cijeni: teritorija naspram historijskog zapisa, potpuna knjiga ljudskih gubitaka i koliko je rezultat odstupio od stvarnog. Zločin se nikada ne nagrađuje — po konstrukciji.</p>
-    <div class="verdict-grid">
-      <article class="verdict-card">
-        <a href="../media/screenshots/rs/extra/dayton.png" data-lightbox="image" data-lightbox-group="verdict" data-lightbox-title="Pregovori o Daytonskom sporazumu">
-          <img src="../media/screenshots/rs/extra/dayton.png" alt="Ekran pregovora o Daytonskom sporazumu: teritorijalni paketi i uslovi nagodbe na papirnom dokumentu" loading="lazy">
-        </a>
-        <div>
-          <h3>Rat se završava za stolom</h3>
-          <p>Daytonski pregovori kao igrivi sistem — teritorijalni paketi, institucionalni aneksi, pritisak patrona. Nefunkcionalan mir ograničava presudu na "šuplju pobjedu", ma kolika teritorija bila.</p>
-        </div>
-      </article>
-      <article class="verdict-card">
-        <a href="../media/screenshots/rs/extra/verdict.png" data-lightbox="image" data-lightbox-group="verdict" data-lightbox-title="Presuda — ocijenjeni ishod">
-          <img src="../media/screenshots/rs/extra/verdict.png" alt="Ekran Presude: kampanja ocijenjena pod međunarodnom osudom" loading="lazy">
-        </a>
-        <div>
-          <h3>Ocjena, a ne slavlje</h3>
-          <p>Teritorija, knjiga ljudskih gubitaka i odstupanje od historije, svedeni u jednu ocjenu — a zločin zaključava osudu koju nijedan rezultat ne može iskupiti.</p>
-        </div>
-      </article>
-      <article class="verdict-card">
-        <a href="../media/screenshots/rs/extra/what_it_cost.png" data-lightbox="image" data-lightbox-group="verdict" data-lightbox-title="Šta je koštalo — rekapitulacija kampanje">
-          <img src="../media/screenshots/rs/extra/what_it_cost.png" alt="Rekapitulacija kampanje: ukupni gubici i raseljeni kroz cijeli rat" loading="lazy">
-        </a>
-        <div>
-          <h3>Šta je koštalo</h3>
-          <p>Svaka kampanja se zatvara vlastitom rekapitulacijom: gubici, raseljeni, najbolja brigada, mišljenje svijeta — izračunato iz zapisa, a ne skriptovano.</p>
-        </div>
-      </article>
-      <article class="verdict-card">
-        <a href="../media/screenshots/rs/extra/another_such_victory.png" data-lightbox="image" data-lightbox-group="verdict" data-lightbox-title="Još jedna takva pobjeda — pregovarački ishod">
-          <img src="../media/screenshots/rs/extra/another_such_victory.png" alt="Grafikon pregovaračkih dimenzija kampanje naspram historije" loading="lazy">
-        </a>
-        <div>
-          <h3>Još jedna takva pobjeda…</h3>
-          <p>Živi grafikon pregovaračkih dimenzija kampanje i njihovog odstupanja od historije — ime samog studija koje vas gleda.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section reveal" id="frame" aria-label="Historijski okvir">
-    <div class="ethic">
-      <span class="ref">Historijski okvir</span>
-      <h2>Rat je tema, a ne nagrada</h2>
-      <p><strong>A War Without Victory</strong> tretira rat u Bosni 1992–1995. kao političku, institucionalnu, vojnu i ljudsku katastrofu. Teritorijalne promjene su važne — ali nikada ne brišu gubitke, raseljavanje, stradanje civila, pokidane saveze, odbijene sporazume ni zavisnost od vanjskih patrona.</p>
-      <p>Gubici se po frakcijama prate na ratnoj karti od prve do posljednje sedmice, a ne guraju u statistiku na kraju kampanje. Ti brojevi ulaze u završnu Presudu, a zločin je strukturno nesposoban da je popravi. Ono što ovu igru izdvaja nije samo historijski detalj — nego insistiranje da komandne odluke ostanu čitljive, provjerljive i moralno skupe kroz cijelu kampanju.</p>
-    </div>
-  </section>
-
-  <section class="section reveal" id="publishers" aria-labelledby="publishers-title">
-    <div class="section-head">
-      <h2 id="publishers-title" class="display">Za izdavače, medije i partnere</h2>
-      <span class="ref ref--quiet">Odjeljak 06 · Brif</span>
-    </div>
-    <p class="section-lede">Ova stranica sadrži dokaze iz žive verzije igre, a ne konceptualne makete. Komercijalno osjetljivi detalji pripadaju ozbiljnom razgovoru; ono što slijedi namjerno je ograničeno na provjereno.</p>
-    <div class="brief">
-      <div>
-        <h3>Trenutni dokazi</h3>
-        <ul class="proof-list">
-          <li>Pune kampanje od 188 sedmica — od aprila 1992. do Daytona — odigrane do kraja sa sve tri frakcije</li>
-          <li>Deterministički engine: isti ulazi ponavljaju se do bajta, čuvano s preko 3.500 automatskih testova</li>
-          <li>Sedmično historijsko ocjenjivanje: ~90% poklapanja na nivou naselja s kartom kraja rata, 31/31 gradova-uporišta</li>
-          <li>Historijski događaji i predsjedničke odluke, po frakciji</li>
-          <li>Glavni štab, korpusi, sektori i formacije; operacije, posljedice, Hronika, Kodeks i Arhiva</li>
-          <li>Interni Claude-API alati za komandante i predsjednike, korišteni za QA i kalibraciju</li>
+      <div class="text">
+        <h2>Šta predsjednik može</h2>
+        <p>Vi ste predsjednik. Vojsku ne pomjerate vi. Vaš dio je potpis: šta odobriti, koga postaviti, koji zahtjev odbiti, na koji mirovni plan odgovoriti.</p>
+        <p>Svaki potpis košta komandni autoritet. Budžet se sporo obnavlja i presuši u krizi, pa rezervna brigada koju pustite ove sedmice može biti komandant kojeg sljedeće sedmice ne možete zamijeniti.</p>
+        <p>Ništa što potpišete ne zaboravlja se. Hronika čuva naredbe, Arhiva čuva šta je iz njih proizašlo, a presuda na kraju čita oboje.</p>
+        <ul class="levers">
+          <li><b>Pustite rezervu.</b> Korpus traži elitnu brigadu. Negdje drugdje ostaje bez oslonca.</li>
+          <li><b>Zamijenite komandanta.</b> Oficir kojeg smijenite ima prijatelje u korpusu koji ostavljate.</li>
+          <li><b>Posjetite front.</b> Moral na liniji raste. Vaš patron primjećuje uz koga ste stajali.</li>
+          <li><b>Obratite se naciji.</b> Prkos učvršćuje linije i podiže očekivanja koja ćete morati ispuniti.</li>
+          <li><b>Odlikujte brigadu.</b> Jedna formacija je uzdignuta. One preskočene pamte.</li>
+          <li><b>Držite granicu prema paravojskama.</b> Njihovi zahtjevi stižu s projektovanim civilnim žrtvama. Odbijte ih, dopustite ih, ili jednom odredite politiku za cijeli rat.</li>
         </ul>
-        <p class="brief-note">Detaljni obim, plan, informacije o timu, finansijske potrebe i pristup verziji razmjenjuju se direktno — ne objavljuju se ovdje.</p>
-        <a class="btn" href="#media">Pregledajte snimke</a>
-      </div>
-      <div>
-        <h3>Kratki pregled</h3>
-        <table class="spec-table">
-          <tr><th scope="row">Format</th><td>Političko-vojna strategija</td></tr>
-          <tr><th scope="row">Platforma</th><td>PC</td></tr>
-          <tr><th scope="row">Status</th><td>U aktivnom razvoju</td></tr>
-          <tr><th scope="row">Kampanja</th><td>Do 188 sedmičnih poteza</td></tr>
-          <tr><th scope="row">Igrivo</th><td>RBiH · RS · HRHB</td></tr>
-          <tr><th scope="row">Model</th><td>Deterministička simulacija</td></tr>
-          <tr><th scope="row">Studio</th><td>Pyrrhic Games</td></tr>
-          <tr><th scope="row">Kontakt</th><td><a href="https://github.com/horkesh">Profil developera ↗</a></td></tr>
-        </table>
       </div>
     </div>
   </section>
 
-  <section class="close" aria-label="Završetak">
-    <span class="ref">Sljedeća historijska sedmica čeka</span>
-    <h2 class="display">Preživite rat. Položite račun za cijenu.</h2>
-    <div class="hero-actions">
-      <a class="btn btn--lamp" href="../media/videos/bs/rbih_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_opening.mp4" data-lightbox-title="Republika Bosna i Hercegovina — otvaranje: od stola do karte" data-lightbox-poster="../media/screenshots/rbih/01_desk.png"><span class="glyph">&#9654;</span> Pogledajte prvu odluku</a>
-      <a class="btn" href="#publishers">Brif za izdavače</a>
+  <section class="band dark" id="presidents">
+    <div class="wrap">
+      <h2>Tri vlade, tri rata</h2>
+      <p class="lede">Istih pet ovlasti je na svakom stolu. Šta koja od njih košta, razlikuje se u svakom glavnom gradu.</p>
+      <div class="presidents">
+        <article>
+          <img src="../media/screenshots/rbih/01_desk.png" alt="Ured predsjednika RBiH u Sarajevu" loading="lazy">
+          <h3>Republika Bosna i Hercegovina</h3>
+          <p>Vlada iz rekviriranog stana u opkoljenom Sarajevu. Ima najviše formalne vlasti od tri vlade i najmanje toga iza čega se može sakriti kad front pukne.</p>
+          <p class="clips"><a href="../media/videos/bs/rbih_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_opening.mp4" data-lightbox-poster="../media/videos/bs/rbih_opening_poster.png" data-lightbox-title="RBiH: otvaranje">Otvaranje <span class="dur">0:29</span></a> <a href="../media/videos/bs/rbih_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rbih_tour.mp4" data-lightbox-poster="../media/videos/bs/rbih_tour_poster.png" data-lightbox-title="RBiH: obilazak komande, juli 1993.">Obilazak komande, juli 1993. <span class="dur">0:48</span></a></p>
+        </article>
+        <article>
+          <img src="../media/screenshots/rs/01_desk.png" alt="Ured predsjednika RS na Palama" loading="lazy">
+          <h3>Republika Srpska</h3>
+          <p>Nasljeđuje oficire i opremu JNA i komandno mjesto na Palama. Najjača vojska na papiru, koja odgovara skupštini što može odbiti da potpiše.</p>
+          <p class="clips"><a href="../media/videos/bs/rs_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rs_opening.mp4" data-lightbox-poster="../media/videos/bs/rs_opening_poster.png" data-lightbox-title="RS: otvaranje">Otvaranje <span class="dur">0:29</span></a> <a href="../media/videos/bs/rs_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/rs_tour.mp4" data-lightbox-poster="../media/videos/bs/rs_tour_poster.png" data-lightbox-title="RS: obilazak komande, juli 1993.">Obilazak komande, juli 1993. <span class="dur">0:48</span></a></p>
+        </article>
+        <article>
+          <img src="../media/screenshots/hrhb/01_desk.png" alt="Ured predsjednika HRHB u Hercegovini" loading="lazy">
+          <h3>Hrvatska Republika Herceg-Bosna</h3>
+          <p>Odgovara dvama glavnim gradovima iz kamene kuće u Hercegovini. U savezu sa Sarajevom, finansirana iz Zagreba, i vezana onim što Zagreb traži zauzvrat.</p>
+          <p class="clips"><a href="../media/videos/bs/hrhb_opening.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/hrhb_opening.mp4" data-lightbox-poster="../media/videos/bs/hrhb_opening_poster.png" data-lightbox-title="HRHB: otvaranje">Otvaranje <span class="dur">0:29</span></a> <a href="../media/videos/bs/hrhb_tour.mp4" data-lightbox="video" data-lightbox-mp4="../media/videos/bs/hrhb_tour.mp4" data-lightbox-poster="../media/videos/bs/hrhb_tour_poster.png" data-lightbox-title="HRHB: obilazak komande, juli 1993.">Obilazak komande, juli 1993. <span class="dur">0:48</span></a></p>
+        </article>
+      </div>
+      <p class="more"><a href="screens.html">Svih 48 snimaka ekrana, po stranama</a></p>
+    </div>
+  </section>
+
+  <section class="band paper" id="verdict">
+    <div class="wrap two reverse">
+      <figure class="still">
+        <a href="../media/screenshots/rs/extra/what_it_cost.png" data-lightbox="image" data-lightbox-title="Koliko je koštalo: pregled kampanje">
+          <img src="../media/screenshots/rs/extra/what_it_cost.png" alt="Pregled kampanje: žrtve i raseljeni preko ratne karte" loading="lazy">
+        </a>
+        <figcaption>Pregled kampanje na kraju rata od 188 sedmica. Snimljeno iz igre.</figcaption>
+      </figure>
+      <div class="text">
+        <h2>Kako se kampanja završava</h2>
+        <p>Kampanja se završava za stolom u Daytonu, ili ranije ako se rat ranije završi. Presuda ocjenjuje koliko je koštala: ljude koji su poginuli i raseljeni, teritoriju zadržanu u odnosu na historijsku kartu, i koliko se vaš rat udaljio od onoga koji se dogodio. Zločin ne može popraviti ocjenu.</p>
+        <p>Isto bodovanje teče svake sedmice tokom igre. Prepuštena historijskom toku, simulacija završava s više od devetnaest od dvadeset naselja pod njihovim historijskim kontrolorom, i sa sva 31 uporišna grada tamo gdje ih je historija ostavila.</p>
+        <p>Kodeks, više od stotinu eseja s izvorima, otvara se kako vaša kampanja stiže do događaja koje opisuju, pa ono što se zaista dogodilo možete čitati uz ono što ste vi uradili.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="press">
+    <div class="wrap two">
+      <div class="text">
+        <h2>Mediji i izdavači</h2>
+        <p>Igra je igriva od početka do kraja za sve tri strane, a svaki snimak i slika na ovoj stranici potiču iz nje. Snimci su montirani radi tempa i titlovani; ništa nije maketa.</p>
+        <p>Za pristup verziji igre, plan razvoja ili duži razgovor, javite se preko profila razvojnog tima.</p>
+        <p class="actions"><a class="button" href="https://github.com/horkesh">Profil razvojnog tima</a> <a class="button button-quiet" href="screens.html">Snimci ekrana</a></p>
+      </div>
+      <dl class="facts">
+        <div><dt>Žanr</dt><dd>Političko-vojna strategija</dd></div>
+        <div><dt>Platforma</dt><dd>PC, za jednog igrača</dd></div>
+        <div><dt>Status</dt><dd>U razvoju, verzija 0.9.9 beta</dd></div>
+        <div><dt>Kampanja</dt><dd>April 1992. do Daytona, 188 sedmičnih poteza</dd></div>
+        <div><dt>Igrive strane</dt><dd>RBiH, RS, HRHB</dd></div>
+        <div><dt>Simulacija</dt><dd>Deterministička; isti ulazi ponavljaju isti rat</dd></div>
+        <div><dt>Historijska provjera</dt><dd>Sedmično bodovanje prema kartiranom zapisu rata</dd></div>
+        <div><dt>Jezici</dt><dd>Engleski, bosanski</dd></div>
+        <div><dt>Razvoj</dt><dd>Pyrrhic Games</dd></div>
+      </dl>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <span>A War Without Victory · Pyrrhic Games</span>
-  <span class="spacer"></span>
-  <a href="https://github.com/horkesh">Profil developera</a>
+<footer class="foot">
+  <span>A War Without Victory, Pyrrhic Games</span>
+  <span>Originalna muzika „What Remains of Home“. Snimljeni uzorci: VSCO 2 Community Edition, CC0.</span>
   <a href="../" lang="en" hreflang="en">English</a>
 </footer>
 
@@ -288,28 +154,14 @@
   </div>
   <div data-lightbox-stage></div>
   <div class="lightbox-nav">
-    <button type="button" data-lightbox-prev>&larr; Prethodni</button>
-    <button type="button" data-lightbox-next>Sljedeći &rarr;</button>
+    <button type="button" data-lightbox-prev>&larr; Prethodno</button>
+    <button type="button" data-lightbox-next>Sljedeće &rarr;</button>
   </div>
 </dialog>
 
 <script type="module">
   import { installLightbox } from "../lightbox.js";
-  import { installFactionTabs } from "../faction_tabs.js";
   installLightbox();
-  installFactionTabs();
-
-  const seen = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-seen");
-        seen.unobserve(entry.target);
-      }
-    }
-  }, { rootMargin: "0px 0px -8% 0px" });
-  for (const el of document.querySelectorAll(".reveal")) seen.observe(el);
 </script>
-<noscript><style>.js .reveal { opacity: 1; transform: none; }</style></noscript>
-
 </body>
 </html>

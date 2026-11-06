@@ -45,7 +45,7 @@ function walk(dir, acc = []) {
 }
 
 const images = walk(MEDIA).filter((f) => /\.(png|jpe?g)$/i.test(f));
-const pages = ['index.html', path.join('bs', 'index.html')]
+const pages = ['index.html', 'screens.html', path.join('bs', 'index.html'), path.join('bs', 'screens.html')]
   .map((p) => path.join(ROOT, p))
   .filter((p) => fs.existsSync(p))
   .map((p) => fs.readFileSync(p, 'utf8'))

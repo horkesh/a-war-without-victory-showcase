@@ -73,4 +73,4 @@ VSCO 2 Community Edition (CC0), Versilian Studios / Sam Gossner.
 
 16 encodes (7 clips × EN/BS + trailer × EN/BS), H.264 only, 229 MB total; check_media PASS; pages rewired;
 pushed to main (GitHub Pages). Re-run order for a future refresh: build game → serve.mjs → generate_pitch_saves →
-record_* → assemble → plan_edit → render_all → build_panels → check_media → commit.
+record_* → assemble → plan_edit → render_all → build_screens → check_media → commit. (build_panels.mjs retired with the 2026-11 redesign: the front page has no galleries.)
