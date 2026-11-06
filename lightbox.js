@@ -32,12 +32,16 @@ export function installLightbox(root = document) {
       const video = root.createElement("video");
       video.controls = true;
       video.preload = "metadata";
+      // Clips ship as H.264 MP4 only (2026-11); the href may still name a WebM on older pages.
+      const typeOf = (url) => (/\.webm(\?|$)/i.test(url) ? "video/webm" : "video/mp4");
       const sources = [
         [trigger.dataset.lightboxMp4, "video/mp4"],
-        [src, "video/webm"],
+        [src, typeOf(src)],
       ];
+      const seen = new Set();
       for (const [sourceUrl, sourceType] of sources) {
-        if (!sourceUrl) continue;
+        if (!sourceUrl || seen.has(sourceUrl)) continue;
+        seen.add(sourceUrl);
         const source = root.createElement("source");
         source.src = sourceUrl;
         source.type = sourceType;

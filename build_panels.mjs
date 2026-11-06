@@ -41,11 +41,13 @@ function duration(rel) {
 
 function esc(s) { return s.replace(/&/g, "&amp;"); }
 
-function videoCard(prefix, f, kind, label, openCue, downloadLabel) {
-  const base = `${prefix}media/videos/${f.id}_${kind}`;
-  const poster = `${prefix}media/screenshots/${f.id}/${kind === "opening" ? "01_desk" : "06_army_hq_briefing"}.png`;
-  const time = duration(`media/videos/${f.id}_${kind}.mp4`);
-  return `<article class="video-card"><a class="video-trigger" href="${base}.webm" data-lightbox="video" data-lightbox-mp4="${base}.mp4" data-lightbox-group="tours-${f.id}" data-lightbox-title="${esc(f.label)} — ${esc(label)}" data-lightbox-poster="${poster}" aria-label="${esc(label)}"><img src="${poster}" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">${openCue}</span></a><div class="video-info"><div class="video-meta"><span>${f.label}</span><time>${time}</time></div><h3>${esc(label)}</h3><a href="${base}.mp4" download>${downloadLabel} &#8595;</a></div></article>`;
+// Captions are burned into the clips, so each language has its own encodes:
+// EN at media/videos/<name>, BS at media/videos/bs/<name> (rendered by production/remotion/render_all.mjs).
+function videoCard(prefix, f, kind, label, openCue, downloadLabel, langDir) {
+  const base = `${prefix}media/videos/${langDir}${f.id}_${kind}`;
+  const poster = `${base}_poster.png`;
+  const time = duration(`media/videos/${langDir}${f.id}_${kind}.mp4`);
+  return `<article class="video-card"><a class="video-trigger" href="${base}.mp4" data-lightbox="video" data-lightbox-mp4="${base}.mp4" data-lightbox-group="tours-${f.id}" data-lightbox-title="${esc(f.label)} — ${esc(label)}" data-lightbox-poster="${poster}" aria-label="${esc(label)}"><img src="${poster}" alt="" loading="lazy"><span class="play-chip" aria-hidden="true">&#9654;</span><span class="video-open-cue">${openCue}</span></a><div class="video-info"><div class="video-meta"><span>${f.label}</span><time>${time}</time></div><h3>${esc(label)}</h3><a href="${base}.mp4" download>${downloadLabel} &#8595;</a></div></article>`;
 }
 
 function galleryCard(prefix, f, screen, lang, num) {
@@ -57,9 +59,10 @@ function galleryCard(prefix, f, screen, lang, num) {
 function panels(lang, prefix) {
   const openCue = lang === "bs" ? "Otvori snimak" : "Open video";
   const downloadLabel = lang === "bs" ? "Preuzmi MP4 snimak" : "Download MP4 recording";
+  const langDir = lang === "bs" ? "bs/" : "";
   return FACTIONS.map((f, i) => {
     const meta = f[lang];
-    const videos = `<div class="video-grid">${videoCard(prefix, f, "opening", meta.opening, openCue, downloadLabel)}${videoCard(prefix, f, "tour", meta.tour, openCue, downloadLabel)}</div>`;
+    const videos = `<div class="video-grid">${videoCard(prefix, f, "opening", meta.opening, openCue, downloadLabel, langDir)}${videoCard(prefix, f, "tour", meta.tour, openCue, downloadLabel, langDir)}</div>`;
     const gallery = `<div class="gallery-grid">${SCREENS.map((s, i) => galleryCard(prefix, f, s, lang, String(i + 1).padStart(2, "0"))).join("")}</div>`;
     return `<div class="faction-panel" id="faction-panel-${f.id}" role="tabpanel" aria-labelledby="faction-tab-${f.id}"${i === 0 ? "" : " hidden"}>${videos}${gallery}</div>`;
   }).join("\n");

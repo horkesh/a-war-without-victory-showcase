@@ -1,0 +1,8 @@
+production/raw/
+production/out/
+production/remotion/node_modules/
+production/remotion/out/
+production/remotion/public/raw/
+production/remotion/public/audio/
+production/remotion/public/stills/
+production/**/*.log
