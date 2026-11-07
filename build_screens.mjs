@@ -3,22 +3,22 @@
 import fs from "node:fs";
 
 const SCREENS = [
-  { key: "01_desk", en: ["President's desk", "Command surface, authority meter and the presidential inbox."], bs: ["Predsjednički sto", "Komandna površina, mjera autoriteta i predsjednička pošta."] },
-  { key: "02_war_map", en: ["War map", "Front lines, formations and the campaign casualty ledger."], bs: ["Ratna karta", "Linije fronta, formacije i knjiga gubitaka kampanje."] },
-  { key: "04_review_before_advance", en: ["Review before advance", "What blocks the week, and why, before you commit it."], bs: ["Pregled prije nastavka", "Šta blokira sedmicu, i zašto, prije nego što je potvrdite."] },
+  { key: "01_desk", en: ["President's desk", "Command surface, authority meter and the presidential inbox."], bs: ["Predsjednički sto", "Na predsjedničkom stolu vidite stanje komandnog autoriteta i pristigle zahtjeve."] },
+  { key: "02_war_map", en: ["War map", "Front lines, formations and the campaign casualty ledger."], bs: ["Ratna karta", "Linije fronta, formacije i evidencija gubitaka u kampanji."] },
+  { key: "04_review_before_advance", en: ["Review before advance", "What blocks the week, and why, before you commit it."], bs: ["Pregled prije nastavka", "Ovdje vidite koje odluke morate donijeti prije prelaska u sljedeću sedmicu i zašto."] },
   { key: "05_decision_room", en: ["Decision Room", "Counter-offers and command dossiers awaiting signature."], bs: ["Soba za odluke", "Protivponude i komandni dosijei koji čekaju potpis."] },
-  { key: "05a_peace_proposal", en: ["Peace proposal", "History's peace plans arrive as live decisions, with the map they draw and the price of refusing."], bs: ["Mirovni prijedlog", "Historijski mirovni planovi stižu kao žive odluke, s kartom koju crtaju i cijenom odbijanja."] },
-  { key: "05b_required_decision", en: ["Required decision", "A decision that needs the president's signature, with its projected civilian cost and the record it creates."], bs: ["Obavezna odluka", "Odluka koja traži predsjednički potpis, s projektovanim civilnim žrtvama i zapisom koji ostaje."] },
-  { key: "05c_presidential_action", en: ["Army HQ request", "The army asks; the president weighs the front against the reserve."], bs: ["Zahtjev Glavnog štaba", "Vojska traži; predsjednik važe front naspram rezerve."] },
-  { key: "06_army_hq_briefing", en: ["Army HQ briefing", "The Chief of Staff's briefing, named casualties and corps readiness."], bs: ["Brifing Glavnog štaba", "Brifing načelnika štaba, imenovani gubici i spremnost korpusa."] },
+  { key: "05a_peace_proposal", en: ["Peace proposal", "History's peace plans arrive as live decisions, with the map they draw and the price of refusing."], bs: ["Mirovni prijedlog", "Kad stigne historijski mirovni prijedlog, možete pogledati predloženu kartu i posljedice odbijanja."] },
+  { key: "05b_required_decision", en: ["Required decision", "A decision that needs the president's signature, with its projected civilian cost and the record it creates."], bs: ["Obavezna odluka", "Odluka koja traži predsjednički potpis, uz procjenu civilnih žrtava. Odgovor ostaje zabilježen."] },
+  { key: "05c_presidential_action", en: ["Army HQ request", "The army asks; the president weighs the front against the reserve."], bs: ["Zahtjev Glavnog štaba", "Štab traži pojačanje. Predsjednik procjenjuje može li ga izdvojiti iz rezerve."] },
+  { key: "06_army_hq_briefing", en: ["Army HQ briefing", "The Chief of Staff's briefing, named casualties and corps readiness."], bs: ["Brifing Glavnog štaba", "Brifing načelnika štaba, poimenični podaci o gubicima i spremnost korpusa."] },
   { key: "07_corps_command", en: ["Corps command", "Sectors, front density and brigade deployment inside one corps."], bs: ["Komanda korpusa", "Sektori, gustina fronta i raspored brigada unutar jednog korpusa."] },
-  { key: "07a_sector_command", en: ["Sector command", "Front-line brigades, morale and enemy contact in one sector."], bs: ["Komanda sektora", "Prvolinijske brigade, moral i kontakt s neprijateljem u jednom sektoru."] },
-  { key: "07a2_formation_detail", en: ["Formation detail", "One brigade's strength, equipment and entrenchment."], bs: ["Detalj formacije", "Brojno stanje, oprema i ukopanost jedne brigade."] },
+  { key: "07a_sector_command", en: ["Sector command", "Front-line brigades, morale and enemy contact in one sector."], bs: ["Komanda sektora", "Brigade na prvoj liniji, moral i kontakt s neprijateljem u jednom sektoru."] },
+  { key: "07a2_formation_detail", en: ["Formation detail", "One brigade's strength, equipment and entrenchment."], bs: ["Pregled formacije", "Brojno stanje, oprema i stepen utvrđenosti jedne brigade."] },
   { key: "07b_war_summary", en: ["War summary", "Readiness and condition of the armed forces."], bs: ["Ratni pregled", "Spremnost i stanje oružanih snaga."] },
   { key: "07c_personnel", en: ["Personnel", "Named officers, appointments and command changes on record."], bs: ["Kadrovi", "Imenovani oficiri, postavljenja i promjene u komandi."] },
-  { key: "08_records", en: ["Records", "Operation archive and territory held over the life of the campaign."], bs: ["Arhiva", "Arhiv operacija i teritorija kroz cijelu kampanju."] },
+  { key: "08_records", en: ["Records", "Operation archive and territory held over the life of the campaign."], bs: ["Arhiva", "Arhiva operacija i pregled teritorije pod kontrolom tokom kampanje."] },
   { key: "09_chronicle", en: ["Chronicle", "The campaign's story, week by week."], bs: ["Hronika", "Priča kampanje, iz sedmice u sedmicu."] },
-  { key: "10_codex", en: ["Codex", "Historical essays and the record of how this war diverged from history."], bs: ["Kodeks", "Historijski eseji i zapis o tome koliko se ovaj rat udaljio od stvarnog."] },
+  { key: "10_codex", en: ["Codex", "Historical essays and the record of how this war diverged from history."], bs: ["Kodeks", "Historijski eseji i zapis o tome koliko se ovaj rat udaljio od stvarnog toka rata."] },
 ];
 
 const FACTIONS = [
@@ -28,8 +28,8 @@ const FACTIONS = [
 ];
 
 const T = {
-  en: { title: "Screenshots", lede: "Every screen below exists for all three playable sides, captured from the same mid-campaign week in each side's own save. Click any frame to open it.", back: "Back to the front page", lang: "Bosanski", langHref: "bs/screens.html", clips: "Clips", opening: "Opening", tour: "Command tour" },
-  bs: { title: "Snimci ekrana", lede: "Svaki ekran ispod postoji za sve tri igrive strane, snimljen u istoj sedmici kampanje iz vlastitog snimka svake strane. Kliknite na bilo koji kadar da ga otvorite.", back: "Nazad na početnu", lang: "English", langHref: "../screens.html", clips: "Snimci", opening: "Otvaranje", tour: "Obilazak komande" },
+  en: { title: "Screenshots", lede: "Every screen below exists for all three playable sides, captured from the same mid-campaign week in each side's own save. Click any frame to open it.", back: "Back to the front page", lang: "Bosanski", langHref: "bs/screens.html", clips: "Clips", opening: "Opening", tour: "Command tour", preview: "Media preview", close: "Close media preview", prev: "Previous", next: "Next" },
+  bs: { title: "Snimci ekrana", lede: "Za sve tri strane prikazani su isti ekrani iz iste sedmice kampanje. Snimci za svaku stranu nastali su iz zasebne sačuvane igre. Kliknite na bilo koji kadar da ga otvorite.", back: "Nazad na početnu", lang: "English", langHref: "../screens.html", clips: "Snimci", opening: "Otvaranje", tour: "Obilazak komande", preview: "Pregled", close: "Zatvori pregled", prev: "Prethodno", next: "Sljedeće" },
 };
 
 function esc(s) { return s.replace(/&/g, "&amp;"); }
@@ -44,7 +44,7 @@ function page(lang) {
       const img = `${prefix}media/screenshots/${f.id}/${s.key}.png`;
       return `<figure><a href="${img}" data-lightbox="image" data-lightbox-group="${f.id}" data-lightbox-title="${esc(f[lang])}: ${esc(title)}"><img src="${img}" alt="${esc(f[lang])}: ${esc(title)}" loading="lazy"></a><figcaption><b>${esc(title)}</b> ${esc(desc)}</figcaption></figure>`;
     }).join("\n");
-    const clips = ["opening", "tour"].map((k) => `<a href="${prefix}media/videos/${vdir}${f.id}_${k}.mp4" data-lightbox="video" data-lightbox-mp4="${prefix}media/videos/${vdir}${f.id}_${k}.mp4" data-lightbox-poster="${prefix}media/videos/${vdir}${f.id}_${k}_poster.png" data-lightbox-title="${esc(f[lang])}: ${t[k]}">${t[k]}</a>`).join(" · ");
+    const clips = ["opening", "tour"].map((k) => `<a href="${prefix}media/videos/${vdir}${f.id}_${k}.mp4" data-lightbox="video" data-lightbox-mp4="${prefix}media/videos/${vdir}${f.id}_${k}.mp4" data-lightbox-poster="${prefix}media/videos/${vdir}${f.id}_${k}_poster.png" data-lightbox-title="${esc(f[lang])}: ${t[k]}">${t[k]}</a>`).join(" ");
     return `<section class="screens" id="${f.id}">
   <h2>${esc(f[lang])}</h2>
   <p class="clips">${t.clips}: ${clips}</p>
@@ -58,7 +58,7 @@ ${figs}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${t.title} · A War Without Victory</title>
+  <title>${t.title} | A War Without Victory</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="${prefix}favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,14 +79,14 @@ ${sections}
 <footer class="foot"><span>A War Without Victory, Pyrrhic Games</span></footer>
 <dialog class="lightbox" id="media-lightbox" aria-labelledby="lightbox-title">
   <div class="lightbox-bar">
-    <span id="lightbox-title">Media preview</span>
+    <span id="lightbox-title">${t.preview}</span>
     <span data-lightbox-counter></span>
-    <button type="button" data-lightbox-close aria-label="Close">&times;</button>
+    <button type="button" data-lightbox-close aria-label="${t.close}">&times;</button>
   </div>
   <div data-lightbox-stage></div>
   <div class="lightbox-nav">
-    <button type="button" data-lightbox-prev>&larr;</button>
-    <button type="button" data-lightbox-next>&rarr;</button>
+    <button type="button" data-lightbox-prev>&larr; ${t.prev}</button>
+    <button type="button" data-lightbox-next>${t.next} &rarr;</button>
   </div>
 </dialog>
 <script type="module">

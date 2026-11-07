@@ -77,8 +77,8 @@ export const EndCard: React.FC<{ lang: Lang; durationFrames: number }> = ({ lang
   );
 };
 
-/** Lower-third caption: kicker in mono, line in condensed; slides in, holds, slides out. */
-export const Caption: React.FC<{ kicker?: string; line: string; durationFrames: number; pos?: 'left' | 'right' | 'center' }> = ({ kicker, line, durationFrames, pos = 'left' }) => {
+/** Lower-third caption: one condensed line; slides in, holds, slides out. */
+export const Caption: React.FC<{ line: string; durationFrames: number; pos?: 'left' | 'right' | 'center' }> = ({ line, durationFrames, pos = 'left' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const inT = interpolate(frame, [0, fps * 0.45], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: easeOut });
@@ -90,14 +90,13 @@ export const Caption: React.FC<{ kicker?: string; line: string; durationFrames: 
   const y = center ? (1 - inT) * 30 : 0;
   const bar = <div style={{ width: 6, background: COLOR.lamp, [right ? 'marginLeft' : 'marginRight']: 22 }} />;
   const anchor: React.CSSProperties = center
-    ? { left: '50%', bottom: 96, transform: `translate(-50%, ${y}px)` }
+    ? { left: '50%', bottom: 96, width: 'max-content', maxWidth: 1600, transform: `translate(-50%, ${y}px)` }
     : { [right ? 'right' : 'left']: 96, bottom: 110, transform: `translateX(${x}px)` };
   return (
     <div style={{ position: 'absolute', ...anchor, opacity: o, fontFamily: FONT.cond, color: COLOR.ink }}>
       <div style={{ display: 'flex', alignItems: 'stretch', flexDirection: right ? 'row-reverse' : 'row' }}>
         {bar}
         <div style={{ background: 'rgba(8,11,11,0.78)', padding: '18px 30px 20px 26px', backdropFilter: 'blur(6px)', [right ? 'borderLeft' : 'borderRight']: `1px solid ${COLOR.edge}`, textAlign: right ? 'right' : 'left' }}>
-          {kicker ? <div style={{ fontFamily: FONT.mono, fontSize: 21, letterSpacing: '0.26em', color: COLOR.lamp, marginBottom: 8 }}>{kicker.toUpperCase()}</div> : null}
           <div style={{ fontSize: 50, fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.005em' }}>{line}</div>
         </div>
       </div>

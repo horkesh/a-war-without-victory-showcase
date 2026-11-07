@@ -7,8 +7,8 @@ import { Atmosphere, Caption, EndCard } from './cards';
 
 type L = Record<Lang, string>;
 type Shot =
-  | { kind: 'video'; take: string; beat: string; lead?: number; dur: number; speed?: number; push?: number; caption?: { kicker?: L; line: L; pos?: 'left' | 'right' | 'center' }; sfx?: string }
-  | { kind: 'still'; file: string; dur: number; from: number; to: number; caption?: { kicker?: L; line: L; pos?: 'left' | 'right' | 'center' } }
+  | { kind: 'video'; take: string; beat: string; lead?: number; dur: number; speed?: number; push?: number; caption?: { line: L; pos?: 'left' | 'right' | 'center' }; sfx?: string }
+  | { kind: 'still'; file: string; dur: number; from: number; to: number; caption?: { line: L; pos?: 'left' | 'right' | 'center' } }
   | { kind: 'card'; dur: number; lines: L[]; sub?: L };
 
 // The hero cut: ~90 s over the calm menu theme. Durations in ms. `lead` plays that many ms BEFORE the beat mark.
@@ -16,25 +16,25 @@ export const TRAILER_SHOTS: Shot[] = [
   { kind: 'card', dur: 3600, lines: [{ en: 'Bosnia-Herzegovina', bs: 'Bosna i Hercegovina' }, { en: 'April 1992', bs: 'April 1992.' }] },
   { kind: 'video', take: 'rbih_opening', beat: 'splash', dur: 3600, push: 0.06, caption: { line: { en: 'A strategic simulation of the Bosnian War', bs: 'Strateška simulacija rata u Bosni' }, pos: 'right' } },
   { kind: 'video', take: 'rbih_opening', beat: 'menu', dur: 2400, push: 0.03 },
-  { kind: 'card', dur: 2600, lines: [{ en: 'Three governments,', bs: 'Tri vlade,' }, { en: 'three wars.', bs: 'tri rata.' }] },
+  { kind: 'card', dur: 2600, lines: [{ en: 'Three governments,', bs: 'Svaka vlada' }, { en: 'three wars.', bs: 'vodi svoj rat.' }] },
   { kind: 'video', take: 'rbih_opening', beat: 'dossier', dur: 2300, push: 0.03 },
   { kind: 'video', take: 'rs_opening', beat: 'dossier', dur: 2300, push: 0.03 },
   { kind: 'video', take: 'hrhb_opening', beat: 'dossier', dur: 2300, push: 0.03 },
   { kind: 'video', take: 'rbih_opening', beat: 'war-has-started', dur: 3000, sfx: 'audio/sfx/event_critical.ogg', caption: { line: { en: 'No one wins this war', bs: 'Ovaj rat niko ne dobija' }, pos: 'center' } },
-  { kind: 'video', take: 'rbih_opening', beat: 'desk', dur: 4000, push: 0.04, caption: { kicker: { en: "The President's desk", bs: 'Predsjednikov sto' }, line: { en: 'Every decision waits for your signature', bs: 'Svaka odluka čeka tvoj potpis' } } },
-  { kind: 'video', take: 'rs_opening', beat: 'war-map', dur: 4200, push: 0.05, caption: { kicker: { en: 'The war map', bs: 'Ratna karta' }, line: { en: 'Every brigade and every front, week by week', bs: 'Svaka brigada i svaki front, iz sedmice u sedmicu' }, pos: 'center' } },
+  { kind: 'video', take: 'rbih_opening', beat: 'desk', dur: 4000, push: 0.04, caption: { line: { en: 'Every decision waits for your signature', bs: 'Svaka odluka čeka tvoj potpis' } } },
+  { kind: 'video', take: 'rs_opening', beat: 'war-map', dur: 4200, push: 0.05, caption: { line: { en: 'Every brigade and every front, week by week', bs: 'Na karti pratiš brigade i frontove iz sedmice u sedmicu.' }, pos: 'center' } },
   { kind: 'card', dur: 2600, lines: [{ en: 'Fifteen months in', bs: 'Petnaest mjeseci kasnije' }] },
-  { kind: 'video', take: 'rbih_tour', beat: 'map-w68', dur: 3600, push: 0.04, caption: { kicker: { en: 'July 1993', bs: 'Juli 1993.' }, line: { en: 'The front has held for fifteen months', bs: 'Front drži već petnaest mjeseci' }, pos: 'center' } },
-  { kind: 'video', take: 'hrhb_tour', beat: 'army-hq', dur: 3200, caption: { kicker: { en: 'Army HQ', bs: 'Glavni štab' }, line: { en: 'Commanders report. You set priorities.', bs: 'Komandanti izvještavaju. Ti postavljaš prioritete.' }, pos: 'center' } },
+  { kind: 'video', take: 'rbih_tour', beat: 'map-w68', dur: 3600, push: 0.04, caption: { line: { en: 'July 1993. The front has held for fifteen months', bs: 'Juli 1993. Linija fronta drži se već petnaest mjeseci.' }, pos: 'center' } },
+  { kind: 'video', take: 'hrhb_tour', beat: 'army-hq', dur: 3200, caption: { line: { en: 'Commanders report. You set priorities.', bs: 'Komandanti izvještavaju. Ti postavljaš prioritete.' }, pos: 'center' } },
   { kind: 'video', take: 'rbih_tour', beat: 'zoomed', lead: 3200, dur: 6200, caption: { line: { en: 'A front is held by the people on it', bs: 'Front drže ljudi koji su na njemu' }, pos: 'center' } },
-  { kind: 'video', take: 'rs_tour', beat: 'chronicle', dur: 3200, caption: { kicker: { en: 'Chronicle', bs: 'Hronika' }, line: { en: 'What you ordered and what it cost', bs: 'Šta si naredio i koliko je koštalo' }, pos: 'center' } },
-  { kind: 'video', take: 'rbih_tour', beat: 'decision-room', dur: 4200, sfx: 'audio/sfx/turn_review_open.ogg', caption: { kicker: { en: 'Decision Room', bs: 'Soba za odluke' }, line: { en: 'Signature required', bs: 'Potreban potpis' } } },
+  { kind: 'video', take: 'rs_tour', beat: 'chronicle', dur: 3200, caption: { line: { en: 'The Chronicle keeps what you ordered and what it cost', bs: 'Hronika bilježi tvoje naredbe i njihovu cijenu.' }, pos: 'center' } },
+  { kind: 'video', take: 'rbih_tour', beat: 'decision-room', dur: 4200, sfx: 'audio/sfx/turn_review_open.ogg', caption: { line: { en: 'Signature required', bs: 'Potreban potpis' } } },
   { kind: 'video', take: 'rbih_directive', beat: 'directive-card', dur: 4200, caption: { line: { en: 'One order, start to finish', bs: 'Jedna naredba, od početka do kraja' } } },
   { kind: 'video', take: 'rbih_directive', beat: 'issued', dur: 3600, sfx: 'audio/sfx/op_launch.ogg' },
   { kind: 'card', dur: 2800, lines: [{ en: 'Every campaign ends', bs: 'Svaka kampanja završava' }, { en: 'with a verdict.', bs: 'presudom.' }] },
-  { kind: 'still', file: 'stills/dayton.png', dur: 3600, from: 1.0, to: 1.08, caption: { kicker: { en: 'Dayton, 1995', bs: 'Dayton, 1995.' }, line: { en: 'Negotiate the end', bs: 'Ispregovaraj kraj' }, pos: 'center' } },
-  { kind: 'still', file: 'stills/what_it_cost.png', dur: 3600, from: 1.08, to: 1.0, caption: { line: { en: 'Account for the cost', bs: 'Položi račun za cijenu' }, pos: 'center' } },
-  { kind: 'still', file: 'stills/verdict.png', dur: 3600, from: 1.0, to: 1.06, caption: { line: { en: 'Graded by the human cost', bs: 'Ocijenjeno po ljudskoj cijeni' }, pos: 'center' } },
+  { kind: 'still', file: 'stills/dayton.png', dur: 3600, from: 1.0, to: 1.08, caption: { line: { en: 'Dayton, 1995. Negotiate the end', bs: 'Dayton, 1995. Pregovaraj o završetku rata.' }, pos: 'center' } },
+  { kind: 'still', file: 'stills/what_it_cost.png', dur: 3600, from: 1.08, to: 1.0, caption: { line: { en: 'Account for the cost', bs: 'Odgovaraj za posljedice.' }, pos: 'center' } },
+  { kind: 'still', file: 'stills/verdict.png', dur: 3600, from: 1.0, to: 1.06, caption: { line: { en: 'Graded by the human cost', bs: 'Presuda uzima u obzir ljudske gubitke.' }, pos: 'center' } },
   { kind: 'still', file: 'stills/another_such_victory.png', dur: 4200, from: 1.06, to: 1.0 },
 ];
 
@@ -124,7 +124,7 @@ export const Trailer: React.FC<{ lang: Lang }> = ({ lang }) => {
             );
           })() : null}
           {s.kind !== 'card' ? <CutIn frames={Math.round(fps * 0.25)} /> : null}
-          {s.kind !== 'card' && s.caption ? <Caption kicker={s.caption.kicker?.[lang]} line={s.caption.line[lang]} durationFrames={dur} pos={s.caption.pos} /> : null}
+          {s.kind !== 'card' && s.caption ? <Caption line={s.caption.line[lang]} durationFrames={dur} pos={s.caption.pos} /> : null}
           {s.kind === 'video' && s.sfx ? <Audio src={staticFile(s.sfx)} volume={0.5} /> : null}
         </Sequence>
       ))}

@@ -82,7 +82,7 @@ export const Clip: React.FC<{ plan: ClipPlan; lang: Lang }> = ({ plan, lang }) =
           <Sequence key={`${seg.beat}-${i}`} from={from} durationInFrames={dur} name={seg.beat}>
             <SegmentVideo plan={plan} seg={seg} push={seg.speed === 1 && seg.outDur > 2500 ? 0.035 : 0} />
             {isFirst ? <FadeFrom durationFrames={ms(FADE_MS)} /> : null}
-            {cap && dur > fps * 1.6 ? <Caption kicker={cap.kicker?.[lang]} line={cap.line[lang]} durationFrames={dur} pos={cap.pos} /> : null}
+            {cap && dur > fps * 1.6 ? <Caption line={cap.line[lang]} durationFrames={dur} pos={cap.pos} /> : null}
           </Sequence>
         );
       })}

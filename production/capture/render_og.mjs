@@ -30,7 +30,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 </style></head><body>
 <div class="bg"></div><div class="shade"></div>
 <div class="brand">${markSvg}<div><div class="t">A War Without Victory</div><div class="s">Bosnia-Herzegovina · 1992-1995</div></div></div>
-<div class="text"><h1>Command a war that cannot be won.</h1><p>A political and military simulation of the Bosnian War, 1992 to 1995. Play one of the three presidencies through 188 weekly turns.</p></div>
+<div class="text"><h1>Command a war that cannot be won.</h1><p>A political and military simulation of the Bosnian War, 1992 to 1995. Take the role of one of the three presidents. The campaign runs up to 188 weekly turns.</p></div>
 </body></html>`;
 
 const browser = await chromium.launch();
